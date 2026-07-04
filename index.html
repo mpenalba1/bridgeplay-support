@@ -4,41 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BridgePlay — Soporte / Support</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body { background:#0D0D0D; color:#F5F3EE; font-family:-apple-system,Helvetica,Arial,sans-serif;
-         max-width:640px; margin:0 auto; padding:40px 20px; line-height:1.6; }
-  h1 { text-transform:uppercase; letter-spacing:1px; }
-  h1 span { color:#4C9A2A; }
-  h2 { margin-top:2em; border-top:2px solid #F5F3EE; padding-top:1em; }
-  a { color:#3FD9C4; }
-  .dim { color:#9C9C96; }
+  :root {
+    --bg:#0D0D0D; --surface:#1C1C1A; --border:#F5F3EE; --dim-border:#4A4A46;
+    --text:#F5F3EE; --dim:#9C9C96; --grass:#4C9A2A; --diamond:#3FD9C4; --gold:#E8B923;
+  }
+  * { box-sizing:border-box; border-radius:0 !important; }
+  body {
+    background:var(--bg);
+    background-image:
+      linear-gradient(rgba(245,243,238,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,243,238,.03) 1px, transparent 1px);
+    background-size:34px 34px;
+    color:var(--text);
+    font-family:'Barlow Condensed', sans-serif;
+    max-width:680px; margin:0 auto; padding:42px 21px; line-height:1.5;
+  }
+  .brand { display:flex; align-items:center; gap:13px; margin-bottom:8px; }
+  .brand img { width:44px; height:44px; }
+  .brand h1 { font-weight:900; font-size:34px; letter-spacing:1px; margin:0; text-transform:uppercase; }
+  .brand h1 span { color:var(--grass); }
+  .tagline { font-size:20px; color:var(--dim); font-weight:500; margin:0 0 34px; }
+  .label {
+    font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:2px;
+    text-transform:uppercase; color:var(--dim); margin:42px 0 13px;
+  }
+  .card { background:var(--surface); border:2px solid var(--border); padding:21px; }
+  .step { display:flex; gap:13px; margin:10px 0; font-size:19px; font-weight:600; }
+  .step b { font-family:'JetBrains Mono', monospace; color:var(--grass); font-weight:700; }
+  .row { border:1px solid var(--dim-border); padding:16px 18px; margin:0 0 10px; }
+  .row h3 { margin:0 0 6px; font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
+  .row p { margin:0; color:var(--dim); font-size:17px; font-weight:500; }
+  .mail {
+    display:block; text-align:center; background:var(--grass); color:#08140A;
+    border:2px solid var(--border); padding:15px; font-weight:900; font-size:20px;
+    letter-spacing:1px; text-transform:uppercase; text-decoration:none; margin-top:13px;
+  }
+  a { color:var(--diamond); }
+  .foot {
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim);
+    border-top:1px solid var(--dim-border); margin-top:52px; padding-top:16px; line-height:1.8;
+  }
 </style>
 </head>
 <body>
-<h1>Bridge<span>Play</span></h1>
-<p>Haz que tus servidores de Minecraft Bedrock aparezcan en tu consola como mundos LAN.<br>
-<span class="dim">Make your Minecraft Bedrock servers show up on your console as LAN worlds.</span></p>
+<div class="brand">
+  <img src="logo.png" alt="BridgePlay">
+  <h1>Bridge<span>Play</span></h1>
+</div>
+<p class="tagline">Tus servidores de Minecraft Bedrock, visibles desde tu consola.<br>
+Your Minecraft Bedrock servers, visible from your console.</p>
 
-<h2>Soporte / Support</h2>
-<p>¿Problemas o preguntas? Escríbenos y respondemos lo antes posible.<br>
-<span class="dim">Problems or questions? Write to us and we'll reply as soon as possible.</span></p>
-<p><strong>✉️ maurizzio.penalba@gmail.com</strong></p>
+<div class="label">Cómo funciona · How it works</div>
+<div class="card">
+  <div class="step"><b>1</b> Guardas la dirección del servidor. <em style="color:var(--dim)">/ Save the server address.</em></div>
+  <div class="step"><b>2</b> BridgePlay lo hace visible en tu red local. <em style="color:var(--dim)">/ BridgePlay makes it visible on your network.</em></div>
+  <div class="step"><b>3</b> Lo ves en Minecraft, en Amigos → LAN. <em style="color:var(--dim)">/ Find it in Minecraft under Friends → LAN.</em></div>
+</div>
 
-<h2>Preguntas frecuentes / FAQ</h2>
-<p><strong>No veo el servidor en Minecraft. / I can't see the server in Minecraft.</strong><br>
-Revisa que tu teléfono y tu consola estén en el mismo WiFi, mantén BridgePlay abierto,
-y cierra y vuelve a abrir la pestaña Amigos en Minecraft.<br>
-<span class="dim">Check that your phone and console are on the same WiFi, keep BridgePlay open,
-and close and reopen the Friends tab in Minecraft.</span></p>
-<p><strong>¿Necesito cuenta? / Do I need an account?</strong><br>
-No. Todo se guarda en tu teléfono. / No. Everything stays on your phone.</p>
+<div class="label">Preguntas frecuentes · FAQ</div>
+<div class="row">
+  <h3>No veo el servidor en Minecraft</h3>
+  <p>Revisa que tu teléfono y consola estén en el mismo WiFi, mantén BridgePlay abierto, y cierra y vuelve a abrir la pestaña Amigos.<br>
+  Check that phone and console share the same WiFi, keep BridgePlay open, and reopen the Friends tab.</p>
+</div>
+<div class="row">
+  <h3>La conexión se detuvo</h3>
+  <p>BridgePlay debe permanecer abierto mientras juegas. / BridgePlay must stay open while you play.</p>
+</div>
+<div class="row">
+  <h3>¿Necesito cuenta? · Do I need an account?</h3>
+  <p>No. Todo se guarda en tu teléfono. / No. Everything stays on your phone.</p>
+</div>
+<div class="row">
+  <h3>Minecraft está en el mismo teléfono</h3>
+  <p>Ciérralo por completo antes de activar: ambos usan la misma conexión.<br>
+  Close it completely before activating: both use the same connection.</p>
+</div>
 
-<h2>Privacidad / Privacy</h2>
-<p><a href="privacy.html">Política de privacidad / Privacy Policy</a></p>
+<div class="label">Soporte · Support</div>
+<div class="card">
+  <p style="margin:0; font-size:19px; font-weight:600;">¿Problemas o preguntas? Escríbenos.<br>
+  <span style="color:var(--dim)">Problems or questions? Write to us.</span></p>
+  <a class="mail" href="mailto:maurizzio.penalba@gmail.com">maurizzio.penalba@gmail.com</a>
+</div>
 
-<p class="dim" style="margin-top:3em; font-size:0.85em;">
-Esta app no está afiliada a Mojang, Microsoft, Xbox, PlayStation, Nintendo ni Minecraft.<br>
-This app is not affiliated with Mojang, Microsoft, Xbox, PlayStation, Nintendo, or Minecraft.
-</p>
+<div class="foot">
+  <a href="privacy.html">Política de privacidad · Privacy Policy</a><br><br>
+  Esta app no está afiliada a Mojang, Microsoft, Xbox, PlayStation, Nintendo ni Minecraft.<br>
+  This app is not affiliated with Mojang, Microsoft, Xbox, PlayStation, Nintendo, or Minecraft.
+</div>
 </body>
 </html>
