@@ -3,7 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BridgePlay — Soporte / Support</title>
+<title>BridgePlay — Join Minecraft Bedrock servers on Xbox &amp; PlayStation · Entra a servidores desde tu consola</title>
+<meta name="description" content="Join any Minecraft Bedrock server (Aternos, Geyser, public servers) from your Xbox or PlayStation. No DNS, no PC, and no ads before you connect. Entra a cualquier servidor de Minecraft Bedrock desde tu Xbox o PlayStation, sin DNS y sin PC.">
+<meta property="og:title" content="BridgePlay — Minecraft Bedrock servers on your console">
+<meta property="og:description" content="Join any Bedrock server from Xbox or PlayStation. No DNS, no PC, no ads before you connect.">
+<meta property="og:image" content="https://mpenalba1.github.io/bridgeplay-support/logo.png">
+<meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -21,27 +26,45 @@
     background-size:34px 34px;
     color:var(--text);
     font-family:'Barlow Condensed', sans-serif;
-    max-width:680px; margin:0 auto; padding:42px 21px; line-height:1.5;
+    max-width:720px; margin:0 auto; padding:42px 21px; line-height:1.5;
   }
-  .brand { display:flex; align-items:center; gap:13px; margin-bottom:8px; }
+  .brand { display:flex; align-items:center; gap:13px; margin-bottom:26px; }
   .brand img { width:44px; height:44px; }
-  .brand h1 { font-weight:900; font-size:34px; letter-spacing:1px; margin:0; text-transform:uppercase; }
-  .brand h1 span { color:var(--grass); }
-  .tagline { font-size:20px; color:var(--dim); font-weight:500; margin:0 0 34px; }
+  .brand .name { font-weight:900; font-size:30px; letter-spacing:1px; margin:0; text-transform:uppercase; }
+  .brand .name span { color:var(--grass); }
+  h1 { font-weight:900; font-size:44px; line-height:1.02; margin:0 0 10px; text-transform:uppercase; letter-spacing:.5px; }
+  .en { color:var(--dim); font-weight:500; }
+  .lead { font-size:21px; font-weight:600; margin:0 0 6px; }
+  .lead.en { font-size:19px; }
   .label {
     font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:2px;
     text-transform:uppercase; color:var(--dim); margin:42px 0 13px;
   }
-  .card { background:var(--surface); border:2px solid var(--border); padding:21px; }
+  .get { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-top:26px; }
+  @media (max-width:560px) { .get { grid-template-columns:1fr; } h1 { font-size:36px; } }
+  .cta {
+    display:block; text-decoration:none; color:var(--text); background:var(--surface);
+    border:2px solid var(--border); border-left:8px solid var(--grass); padding:16px 18px;
+  }
+  .cta:hover { background:#24241f; }
+  .cta .t1 { font-weight:900; font-size:24px; text-transform:uppercase; letter-spacing:.5px; }
+  .cta .t2 { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); }
+  .search { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); margin-top:10px; }
+  .card { background:var(--surface); border:1px solid var(--dim-border); padding:21px; }
   .step { display:flex; gap:13px; margin:10px 0; font-size:19px; font-weight:600; }
   .step b { font-family:'JetBrains Mono', monospace; color:var(--grass); font-weight:700; }
+  .perks { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  @media (max-width:560px) { .perks { grid-template-columns:1fr; } }
+  .perk { border:1px solid var(--dim-border); padding:14px 16px; }
+  .perk h3 { margin:0 0 4px; font-size:19px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
+  .perk p { margin:0; font-size:16px; font-weight:500; color:var(--dim); }
   .row { border:1px solid var(--dim-border); padding:16px 18px; margin:0 0 10px; }
   .row h3 { margin:0 0 6px; font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
   .row p { margin:0; color:var(--dim); font-size:17px; font-weight:500; }
+  .row p + p { margin-top:6px; }
   .mail {
-    display:block; text-align:center; background:var(--grass); color:#08140A;
-    border:2px solid var(--border); padding:15px; font-weight:900; font-size:20px;
-    letter-spacing:1px; text-transform:uppercase; text-decoration:none; margin-top:13px;
+    display:inline-block; font-family:'JetBrains Mono', monospace; font-size:15px;
+    color:var(--diamond); margin-top:10px;
   }
   a { color:var(--diamond); }
   .foot {
@@ -53,42 +76,77 @@
 <body>
 <div class="brand">
   <img src="logo.png" alt="BridgePlay">
-  <h1>Bridge<span>Play</span></h1>
+  <div class="name">Bridge<span>Play</span></div>
 </div>
-<p class="tagline">Tus servidores de Minecraft Bedrock, visibles desde tu consola.<br>
-Your Minecraft Bedrock servers, visible from your console.</p>
+
+<h1>Entra a cualquier servidor de Minecraft Bedrock desde tu consola</h1>
+<p class="lead">Xbox y PlayStation. Sin DNS, sin PC, y sin ver anuncios para conectarte.</p>
+<p class="lead en">Join any Minecraft Bedrock server from your Xbox or PlayStation. No DNS, no PC, and no ads before you connect.</p>
+
+<div class="get">
+  <a class="cta" id="ios" href="https://apps.apple.com/app/apple-store/id6786974231?pt=129034241&amp;ct=web_home&amp;mt=8">
+    <div class="t1">iPhone</div>
+    <div class="t2">Gratis en el App Store · Free on the App Store</div>
+  </a>
+  <a class="cta" id="android" href="https://play.google.com/store/apps/details?id=com.bridgeplay.app&amp;referrer=utm_source%3Dweb%26utm_campaign%3Dweb_home">
+    <div class="t1">Android</div>
+    <div class="t2">Gratis en Google Play · Free on Google Play</div>
+  </a>
+</div>
+<div class="search">¿Desde otro lado? Busca «BridgePlay Bedrock» en tu tienda. · Search "BridgePlay Bedrock" in your store.</div>
 
 <div class="label">Cómo funciona · How it works</div>
 <div class="card">
-  <div class="step"><b>1</b> Guardas la dirección del servidor. <em style="color:var(--dim)">/ Save the server address.</em></div>
-  <div class="step"><b>2</b> BridgePlay lo hace visible en tu red local. <em style="color:var(--dim)">/ BridgePlay makes it visible on your network.</em></div>
-  <div class="step"><b>3</b> Lo ves en Minecraft, en Amigos → LAN. <em style="color:var(--dim)">/ Find it in Minecraft under Friends → LAN.</em></div>
+  <div class="step"><b>1</b><span>Guarda la dirección y el puerto de tu servidor (Aternos, Geyser o uno público). <span class="en">/ Save your server's address and port.</span></span></div>
+  <div class="step"><b>2</b><span>Toca «Activar para Minecraft». <span class="en">/ Tap "Activate for Minecraft".</span></span></div>
+  <div class="step"><b>3</b><span>En la consola: Jugar → Mundos → el mundo que dice LAN. <span class="en">/ On your console: Play → Worlds → the LAN world.</span></span></div>
+</div>
+
+<div class="label">Por qué BridgePlay · Why BridgePlay</div>
+<div class="perks">
+  <div class="perk"><h3>Nunca un anuncio para conectarte</h3><p>Conectar es gratis y sin esperas. / Never an ad before you connect.</p></div>
+  <div class="perk"><h3>Sin DNS ni PC</h3><p>Nada que configurar en la consola. / Nothing to set up on the console.</p></div>
+  <div class="perk"><h3>¿Está encendido?</h3><p>Ves el estado, los jugadores y el ping, y te avisa si tu Aternos está apagado. / See if your server is online before joining.</p></div>
+  <div class="perk"><h3>Entrar directo (beta)</h3><p>Entras y puedes cerrar la app. / Join, then close the app.</p></div>
+  <div class="perk"><h3>Aternos y Geyser</h3><p>Funciona con servidores Bedrock y con servidores Java con Geyser. / Works with Bedrock and Java + Geyser servers.</p></div>
+  <div class="perk"><h3>Sin cuentas</h3><p>Todo se guarda en tu teléfono. / Everything stays on your phone.</p></div>
 </div>
 
 <div class="label">Preguntas frecuentes · FAQ</div>
 <div class="row">
-  <h3>No veo el servidor en Minecraft</h3>
-  <p>Revisa que tu teléfono y consola estén en el mismo WiFi, mantén BridgePlay abierto, y cierra y vuelve a abrir la pestaña Amigos.<br>
-  Check that phone and console share the same WiFi, keep BridgePlay open, and reopen the Friends tab.</p>
+  <h3>No veo el servidor en Minecraft · I don't see the server</h3>
+  <p>1) Teléfono y consola en el mismo WiFi (no la red de invitados). 2) Revisa que el servidor esté encendido: BridgePlay te lo dice. 3) Cierra Minecraft por completo en la consola y ábrelo otra vez. 4) Apaga y prende el WiFi del teléfono.</p>
+  <p>1) Same WiFi for phone and console (not a guest network). 2) Make sure the server is online: BridgePlay shows it. 3) Fully close Minecraft on the console and open it again. 4) Turn your phone's WiFi off and on.</p>
 </div>
 <div class="row">
-  <h3>La conexión se detuvo</h3>
-  <p>BridgePlay debe permanecer abierto mientras juegas. / BridgePlay must stay open while you play.</p>
+  <h3>¿Tengo que dejar la app abierta? · Do I need to keep the app open?</h3>
+  <p>Con «Entrar directo» (beta), no: entras y puedes cerrarla. Con la conexión de siempre, sí: en iPhone déjala abierta en pantalla; en Android déjala activa (puedes salir de la app, pero no la cierres).</p>
+  <p>With "Join directly" (beta), no: you can close it after joining. With the usual connection, yes: keep it on screen on iPhone, or running on Android.</p>
+</div>
+<div class="row">
+  <h3>¿Dónde están los juegos LAN? · Where are LAN games?</h3>
+  <p>En la versión actual de Minecraft, en Jugar → Mundos (ya no en la pestaña Amigos). / In current Minecraft: Play → Worlds (no longer the Friends tab).</p>
+</div>
+<div class="row">
+  <h3>¿Funciona con Aternos? · Does it work with Aternos?</h3>
+  <p>Sí, con servidores Bedrock y con servidores Java que tienen Geyser (crossplay). Usa la dirección y el puerto de Bedrock que te muestra Aternos. / Yes, including Java servers with Geyser: use the Bedrock address and port Aternos shows you.</p>
+</div>
+<div class="row">
+  <h3>¿Funciona en Nintendo Switch? · Nintendo Switch?</h3>
+  <p>No. Minecraft en Switch no muestra juegos LAN. / No: Minecraft on Switch doesn't list LAN games.</p>
 </div>
 <div class="row">
   <h3>¿Necesito cuenta? · Do I need an account?</h3>
   <p>No. Todo se guarda en tu teléfono. / No. Everything stays on your phone.</p>
 </div>
 <div class="row">
-  <h3>Minecraft está en el mismo teléfono</h3>
-  <p>Ciérralo por completo antes de activar: ambos usan la misma conexión.<br>
-  Close it completely before activating: both use the same connection.</p>
+  <h3>Minecraft está en el mismo teléfono · Minecraft on the same phone</h3>
+  <p>Ciérralo por completo antes de activar: ambos usan la misma conexión. / Close it completely before activating: both use the same connection.</p>
 </div>
 
 <div class="label">Soporte · Support</div>
 <div class="card">
-  <p style="margin:0; font-size:19px; font-weight:600;">¿Problemas o preguntas? Escríbenos.<br>
-  <span style="color:var(--dim)">Problems or questions? Write to us.</span></p>
+  <p style="margin:0; font-size:19px; font-weight:600;">¿Problemas o preguntas? Escríbenos. <span class="en">/ Problems or questions? Write to us.</span></p>
   <a class="mail" href="mailto:maurizzio.penalba@gmail.com">maurizzio.penalba@gmail.com</a>
 </div>
 
@@ -97,5 +155,20 @@ Your Minecraft Bedrock servers, visible from your console.</p>
   Esta app no está afiliada a Mojang, Microsoft, Xbox, PlayStation, Nintendo ni Minecraft.<br>
   This app is not affiliated with Mojang, Microsoft, Xbox, PlayStation, Nintendo, or Minecraft.
 </div>
+
+<script>
+  // Etiqueta de campaña según de dónde viene la visita (?from=tiktok → web_tiktok),
+  // para que cada tienda cuente las descargas por canal. Solo letras, números y "_".
+  (function () {
+    var from = new URLSearchParams(location.search).get("from");
+    if (!from || !/^[a-z0-9_]{1,20}$/.test(from)) return;
+    var c = "web_" + from;
+    document.getElementById("ios").href =
+      "https://apps.apple.com/app/apple-store/id6786974231?pt=129034241&ct=" + c + "&mt=8";
+    document.getElementById("android").href =
+      "https://play.google.com/store/apps/details?id=com.bridgeplay.app&referrer=utm_source%3D" +
+      from + "%26utm_campaign%3D" + c;
+  })();
+</script>
 </body>
 </html>
