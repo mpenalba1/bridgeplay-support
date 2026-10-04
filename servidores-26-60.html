@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prepara tu servidor para Minecraft 26.60 · Get your server ready for 26.60 — BridgePlay</title>
+<meta name="description" content="Desde Minecraft 26.60 (27-oct-2026) las consolas solo entran a servidores con la vía nueva (NetherNet). Cómo preparar Bedrock, Aternos y Java + Geyser. / How to get your server ready for Minecraft 26.60.">
+<meta property="og:title" content="Prepara tu servidor para Minecraft 26.60 · Get your server ready for 26.60">
+<meta property="og:description" content="Consoles on Minecraft 26.60 only join servers that speak NetherNet. Here is how to get ready.">
+<meta property="og:image" content="https://mpenalba1.github.io/bridgeplay-support/logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0D0D0D; --surface:#1C1C1A; --border:#F5F3EE; --dim-border:#4A4A46;
+    --text:#F5F3EE; --dim:#9C9C96; --grass:#4C9A2A; --diamond:#3FD9C4; --gold:#E8B923;
+  }
+  * { box-sizing:border-box; border-radius:0 !important; }
+  body {
+    background:var(--bg);
+    background-image:
+      linear-gradient(rgba(245,243,238,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,243,238,.03) 1px, transparent 1px);
+    background-size:34px 34px;
+    color:var(--text);
+    font-family:'Barlow Condensed', sans-serif;
+    max-width:720px; margin:0 auto; padding:42px 21px; line-height:1.5;
+  }
+  .brand { display:flex; align-items:center; gap:13px; margin-bottom:26px; }
+  .brand img { width:44px; height:44px; }
+  .brand .name { font-weight:900; font-size:30px; letter-spacing:1px; margin:0; text-transform:uppercase; }
+  .brand .name span { color:var(--grass); }
+  h1 { font-weight:900; font-size:44px; line-height:1.02; margin:0 0 10px; text-transform:uppercase; letter-spacing:.5px; }
+  .en { color:var(--dim); font-weight:500; }
+  .lead { font-size:21px; font-weight:600; margin:0 0 6px; }
+  .lead.en { font-size:19px; }
+  .label {
+    font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:2px;
+    text-transform:uppercase; color:var(--dim); margin:42px 0 13px;
+  }
+  .get { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-top:26px; }
+  @media (max-width:560px) { .get { grid-template-columns:1fr; } h1 { font-size:36px; } }
+  .cta {
+    display:block; text-decoration:none; color:var(--text); background:var(--surface);
+    border:2px solid var(--border); border-left:8px solid var(--grass); padding:16px 18px;
+  }
+  .cta:hover { background:#24241f; }
+  .cta .t1 { font-weight:900; font-size:24px; text-transform:uppercase; letter-spacing:.5px; }
+  .cta .t2 { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); }
+  .search { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); margin-top:10px; }
+  .card { background:var(--surface); border:1px solid var(--dim-border); padding:21px; }
+  .step { display:flex; gap:13px; margin:10px 0; font-size:19px; font-weight:600; }
+  .step b { font-family:'JetBrains Mono', monospace; color:var(--grass); font-weight:700; }
+  .perks { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  @media (max-width:560px) { .perks { grid-template-columns:1fr; } }
+  .perk { border:1px solid var(--dim-border); padding:14px 16px; }
+  .perk h3 { margin:0 0 4px; font-size:19px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
+  .perk p { margin:0; font-size:16px; font-weight:500; color:var(--dim); }
+  .row { border:1px solid var(--dim-border); padding:16px 18px; margin:0 0 10px; }
+  .row h3 { margin:0 0 6px; font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
+  .row p { margin:0; color:var(--dim); font-size:17px; font-weight:500; }
+  .row p + p { margin-top:6px; }
+  .mail {
+    display:inline-block; font-family:'JetBrains Mono', monospace; font-size:15px;
+    color:var(--diamond); margin-top:10px;
+  }
+  a { color:var(--diamond); }
+  .foot {
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim);
+    border-top:1px solid var(--dim-border); margin-top:52px; padding-top:16px; line-height:1.8;
+  }
+  h2 { font-weight:900; font-size:26px; text-transform:uppercase; letter-spacing:.5px; margin:34px 0 10px; }
+  li { font-size:18px; font-weight:500; margin:6px 0; }
+  code { font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--diamond); }
+  .lang { border-top:2px solid var(--border); margin-top:46px; padding-top:6px; }
+</style>
+</head>
+<body>
+<div class="brand">
+  <a href="./"><img src="logo.png" alt="BridgePlay"></a>
+  <div class="name">Bridge<span>Play</span></div>
+</div>
+
+<h1>Prepara tu servidor para Minecraft 26.60</h1>
+<p class="lead">Desde Minecraft 26.60 (27 de octubre de 2026), las consolas solo pueden entrar a servidores que hablen la «vía nueva» de Minecraft (NetherNet).</p>
+<p class="lead en">Get your server ready for Minecraft 26.60 — <a href="#en">English below</a>.</p>
+<p style="font-size:18px; color:var(--dim)">Si tu servidor no la tiene, los jugadores con Xbox o PlayStation actualizados no podrán entrar, con o sin BridgePlay.</p>
+
+<h2>¿Mi servidor ya está listo?</h2>
+<div class="card">
+  <p style="margin:0; font-size:18px;">La próxima versión de BridgePlay (antes del 27 de octubre) te lo dirá en el detalle de tu servidor: <b>«Acepta consolas con Minecraft 26.60 o más nuevo»</b> o <b>«Todavía no acepta…»</b>.</p>
+</div>
+
+<h2>Servidor oficial de Bedrock</h2>
+<ul>
+  <li>Desde la 26.60 usa <b>solo</b> la vía nueva (<code>transport=nethernet</code> en <code>server.properties</code>). Desde la 26.50 ya puedes activarla.</li>
+  <li>La vía nueva usa <b>TCP y UDP</b> en el puerto del servidor (19132 por defecto). Abre <b>los dos</b> en tu router.</li>
+  <li>Si tu puerto público es distinto del interno: <code>server-udp-ports=&lt;IP pública&gt;:&lt;puerto público&gt;:&lt;puerto interno&gt;</code>.</li>
+</ul>
+
+<h2>Aternos</h2>
+<ul>
+  <li><b>Bedrock:</b> se actualiza solo a la vía nueva.</li>
+  <li><b>Java + Geyser:</b> Aternos atiende la vía nueva en <code>tuservidor.aternos.me</code>, <b>puerto 19132</b> (no en el puerto que te muestra para Bedrock). La próxima versión de BridgePlay la encuentra sola.</li>
+  <li>Si al entrar ves <i>«Duplicate handler name: rak-error-handler»</i>, es un fallo del lado del servidor (<a href="https://github.com/GeyserMC/Geyser/issues/6746">reportado a Geyser</a>). Avísale también al soporte de Aternos.</li>
+</ul>
+
+<h2>Java + Geyser (servidor propio o hosting)</h2>
+<ul>
+  <li><b>Actualiza Geyser</b> a una versión del 15 de septiembre de 2026 o posterior (soporte de Bedrock 26.50 y de la vía nueva).</li>
+  <li>La vía nueva necesita el puerto de Bedrock <b>en TCP y en UDP</b>. Ábrelos los dos.</li>
+  <li><b><code>clone-remote-port</code> ya no sirve</b>: el puerto TCP chocaría con el de Java. Usa un puerto propio para Bedrock.</li>
+  <li>¿Tu hosting no te da un puerto TCP? Usa <b>Warden</b>, un servicio gratis que hace la parte TCP por ti (te da una dirección tipo <code>algo.wdn.gg</code>). Solo necesitas el puerto UDP.</li>
+</ul>
+
+<div class="lang" id="en"></div>
+<h1>Get your server ready for Minecraft 26.60</h1>
+<p class="lead">From Minecraft 26.60 (October 27, 2026), consoles can only join servers that speak Minecraft's «new connection» (NetherNet).</p>
+<p style="font-size:18px; color:var(--dim)">If your server doesn't, players on updated Xbox or PlayStation can't join — with or without BridgePlay.</p>
+
+<h2>Is my server ready?</h2>
+<div class="card">
+  <p style="margin:0; font-size:18px;">The next BridgePlay version (before October 27) shows it on your server's details: <b>"Accepts consoles on Minecraft 26.60 or newer"</b> or <b>"Doesn't accept… yet"</b>.</p>
+</div>
+
+<h2>Official Bedrock server</h2>
+<ul>
+  <li>From 26.60 it <b>only</b> uses the new connection (<code>transport=nethernet</code> in <code>server.properties</code>). From 26.50 you can switch early.</li>
+  <li>The new connection uses <b>TCP and UDP</b> on the server port (19132 by default). Open <b>both</b> on your router.</li>
+  <li>If your public port differs from the internal one: <code>server-udp-ports=&lt;public IP&gt;:&lt;public port&gt;:&lt;internal port&gt;</code>.</li>
+</ul>
+
+<h2>Aternos</h2>
+<ul>
+  <li><b>Bedrock:</b> switches to the new connection automatically.</li>
+  <li><b>Java + Geyser:</b> Aternos serves the new connection at <code>yourserver.aternos.me</code>, <b>port 19132</b> (not the Bedrock port it shows you). The next BridgePlay version finds it on its own.</li>
+  <li>If you see <i>"Duplicate handler name: rak-error-handler"</i>, it's a server-side bug (<a href="https://github.com/GeyserMC/Geyser/issues/6746">reported to Geyser</a>). Let Aternos support know too.</li>
+</ul>
+
+<h2>Java + Geyser (self-hosted or on a host)</h2>
+<ul>
+  <li><b>Update Geyser</b> to a build from September 15, 2026 or later (Bedrock 26.50 + new connection support).</li>
+  <li>The new connection needs the Bedrock port on <b>both TCP and UDP</b>. Open both.</li>
+  <li><b><code>clone-remote-port</code> no longer works</b>: the TCP port would clash with Java's. Give Bedrock its own port.</li>
+  <li>Your host doesn't give you a TCP port? Use <b>Warden</b>, a free service that handles the TCP part for you (you get an address like <code>something.wdn.gg</code>). You only need the UDP port.</li>
+</ul>
+
+<div class="foot">
+  Fuentes · Sources: <a href="https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition">Aternos — NetherNet</a> ·
+  <a href="https://github.com/GeyserMC/Geyser/pull/6703">Geyser #6703</a> · Mojang bedrock-server 1.26.60 (<code>server.properties</code>) · pruebas de BridgePlay con Xbox, 3–4 oct 2026.<br><br>
+  <a href="./">← BridgePlay</a> · <a href="privacy.html">Privacidad · Privacy</a><br><br>
+  Esta app no está afiliada a Mojang, Microsoft, Xbox, PlayStation, Nintendo ni Minecraft.<br>
+  This app is not affiliated with Mojang, Microsoft, Xbox, PlayStation, Nintendo, or Minecraft.
+</div>
+</body>
+</html>
