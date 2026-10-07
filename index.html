@@ -1,169 +1,208 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"
+  data-title-es="BridgePlay — Tu servidor de Minecraft Bedrock en Xbox y PlayStation"
+  data-title-en="BridgePlay — Your Minecraft Bedrock server on Xbox & PlayStation"
+  data-title-ja="BridgePlay — マイクラ統合版の外部サーバーにPS・Xboxから参加">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BridgePlay — Join Minecraft Bedrock servers on Xbox &amp; PlayStation · Entra a servidores desde tu consola</title>
-<meta name="description" content="Join any Minecraft Bedrock server (Aternos, Geyser, public servers) from your Xbox or PlayStation. No DNS, no PC, and no ads before you connect. Entra a cualquier servidor de Minecraft Bedrock desde tu Xbox o PlayStation, sin DNS y sin PC.">
+<title>BridgePlay — Tu servidor de Minecraft Bedrock en Xbox y PlayStation</title>
+<meta name="description" content="Join any Minecraft Bedrock server (Aternos, Geyser, public servers) from your Xbox or PlayStation. No DNS, no PC, no ads to connect. Entra a cualquier servidor de Minecraft Bedrock desde tu consola. マイクラ統合版の外部サーバーにPS・Xboxから参加。">
 <meta property="og:title" content="BridgePlay — Minecraft Bedrock servers on your console">
-<meta property="og:description" content="Join any Bedrock server from Xbox or PlayStation. No DNS, no PC, no ads before you connect.">
+<meta property="og:description" content="Join any Bedrock server from Xbox or PlayStation. No DNS, no PC, no ads to connect.">
 <meta property="og:image" content="https://mpenalba1.github.io/bridgeplay-support/logo.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg:#0D0D0D; --surface:#1C1C1A; --border:#F5F3EE; --dim-border:#4A4A46;
-    --text:#F5F3EE; --dim:#9C9C96; --grass:#4C9A2A; --diamond:#3FD9C4; --gold:#E8B923;
-  }
-  * { box-sizing:border-box; border-radius:0 !important; }
-  body {
-    background:var(--bg);
-    background-image:
-      linear-gradient(rgba(245,243,238,.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,243,238,.03) 1px, transparent 1px);
-    background-size:34px 34px;
-    color:var(--text);
-    font-family:'Barlow Condensed', sans-serif;
-    max-width:720px; margin:0 auto; padding:42px 21px; line-height:1.5;
-  }
-  .brand { display:flex; align-items:center; gap:13px; margin-bottom:26px; }
-  .brand img { width:44px; height:44px; }
-  .brand .name { font-weight:900; font-size:30px; letter-spacing:1px; margin:0; text-transform:uppercase; }
-  .brand .name span { color:var(--grass); }
-  h1 { font-weight:900; font-size:44px; line-height:1.02; margin:0 0 10px; text-transform:uppercase; letter-spacing:.5px; }
-  .en { color:var(--dim); font-weight:500; }
-  .lead { font-size:21px; font-weight:600; margin:0 0 6px; }
-  .lead.en { font-size:19px; }
-  .label {
-    font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:2px;
-    text-transform:uppercase; color:var(--dim); margin:42px 0 13px;
-  }
-  .get { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-top:26px; }
-  @media (max-width:560px) { .get { grid-template-columns:1fr; } h1 { font-size:36px; } }
-  .cta {
-    display:block; text-decoration:none; color:var(--text); background:var(--surface);
-    border:2px solid var(--border); border-left:8px solid var(--grass); padding:16px 18px;
-  }
-  .cta:hover { background:#24241f; }
-  .cta .t1 { font-weight:900; font-size:24px; text-transform:uppercase; letter-spacing:.5px; }
-  .cta .t2 { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); }
-  .search { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); margin-top:10px; }
-  .card { background:var(--surface); border:1px solid var(--dim-border); padding:21px; }
-  .step { display:flex; gap:13px; margin:10px 0; font-size:19px; font-weight:600; }
-  .step b { font-family:'JetBrains Mono', monospace; color:var(--grass); font-weight:700; }
-  .perks { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  @media (max-width:560px) { .perks { grid-template-columns:1fr; } }
-  .perk { border:1px solid var(--dim-border); padding:14px 16px; }
-  .perk h3 { margin:0 0 4px; font-size:19px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
-  .perk p { margin:0; font-size:16px; font-weight:500; color:var(--dim); }
-  .row { border:1px solid var(--dim-border); padding:16px 18px; margin:0 0 10px; }
-  .row h3 { margin:0 0 6px; font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
-  .row p { margin:0; color:var(--dim); font-size:17px; font-weight:500; }
-  .row p + p { margin-top:6px; }
-  .mail {
-    display:inline-block; font-family:'JetBrains Mono', monospace; font-size:15px;
-    color:var(--diamond); margin-top:10px;
-  }
-  a { color:var(--diamond); }
-  .foot {
-    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim);
-    border-top:1px solid var(--dim-border); margin-top:52px; padding-top:16px; line-height:1.8;
-  }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20261006b">
+<script src="lang.js?v=20261006b"></script>
 </head>
 <body>
-<div class="brand">
-  <img src="logo.png" alt="BridgePlay">
-  <div class="name">Bridge<span>Play</span></div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.png" alt=""><b>BRIDGE<span>PLAY</span></b></a>
+  <nav class="langs" aria-label="Idioma / Language / 言語">
+    <button type="button" data-set="es" aria-pressed="true">ES</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+    <button type="button" data-set="ja" aria-pressed="false">日本語</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<section class="hero">
+  <div>
+    <div data-l="es">
+      <h1>Tu servidor de Minecraft Bedrock, <em>en tu consola</em></h1>
+      <p class="lead">Entra desde tu Xbox o PlayStation a Aternos, a servidores con Geyser o a cualquier servidor público. Sin DNS, sin PC y sin ver anuncios para conectarte.</p>
+    </div>
+    <div data-l="en">
+      <h1>Your Minecraft Bedrock server, <em>on your console</em></h1>
+      <p class="lead">Join Aternos, Geyser or any public server from your Xbox or PlayStation. No DNS, no PC, and never an ad to connect.</p>
+    </div>
+    <div data-l="ja">
+      <h1>マイクラ統合版の外部サーバーに、<em>ゲーム機から参加</em></h1>
+      <p class="lead">PS5・PS4・Xboxから、Aternos、Geyserを入れたサーバー、そのほかの公開サーバーに参加できます。DNS設定もPCも不要で、接続のために広告を見る必要もありません。</p>
+    </div>
+    <div class="get">
+      <a class="cta" id="ios" href="https://apps.apple.com/app/apple-store/id6786974231?pt=129034241&amp;ct=web_home&amp;mt=8">
+        <div><div class="t1">iPhone</div>
+          <div class="t2"><span data-l="es">Gratis en el App Store</span><span data-l="en">Free on the App Store</span><span data-l="ja">App Storeで無料</span></div></div>
+      </a>
+      <a class="cta" id="android" href="https://play.google.com/store/apps/details?id=com.bridgeplay.app&amp;referrer=utm_source%3Dweb%26utm_campaign%3Dweb_home">
+        <div><div class="t1">Android</div>
+          <div class="t2"><span data-l="es">Gratis en Google Play</span><span data-l="en">Free on Google Play</span><span data-l="ja">Google Playで無料</span></div></div>
+      </a>
+    </div>
+    <p class="note">
+      <span data-l="es">¿No abre el enlace? Busca «BridgePlay Bedrock» en tu tienda.</span>
+      <span data-l="en">Link not opening? Search "BridgePlay Bedrock" in your store.</span>
+      <span data-l="ja">リンクが開かない場合は、ストアで「BridgePlay」と検索してください。</span>
+    </p>
+  </div>
+  <div class="phone">
+    <img data-l="es" src="shots/es-01.jpg" alt="BridgePlay: ¡Listo! Ya estás en tu servidor">
+    <img data-l="en" src="shots/en-01.jpg" alt="BridgePlay: You're in your server" loading="lazy">
+    <img data-l="ja" src="shots/ja-01.jpg" alt="BridgePlay：サーバーに入れました" loading="lazy">
+  </div>
+</section>
+
+<div class="label"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span><span data-l="ja">使い方</span></div>
+<ol class="steps" data-l="es">
+  <li><span>Guarda la dirección y el puerto de tu servidor.<small>Aternos, Geyser o uno público. También puedes pegar uno que te compartió un amigo.</small></span></li>
+  <li><span>Toca «Activar para Minecraft».<small>Tu teléfono hace de puente en tu WiFi.</small></span></li>
+  <li><span>En la consola: Jugar → Mundos.<small>Elige el mundo que dice LAN. Si la consola entra directo al servidor, puedes cerrar la app.</small></span></li>
+</ol>
+<ol class="steps" data-l="en">
+  <li><span>Save your server's address and port.<small>Aternos, Geyser or a public one. You can also paste one a friend shared with you.</small></span></li>
+  <li><span>Tap "Activate for Minecraft".<small>Your phone becomes the bridge on your WiFi.</small></span></li>
+  <li><span>On your console: Play → Worlds.<small>Pick the LAN world. If your console joins the server directly, you can close the app.</small></span></li>
+</ol>
+<ol class="steps" data-l="ja">
+  <li><span>サーバーのアドレスとポートを保存します。<small>AternosやGeyser、公開サーバーもOK。フレンドから共有されたサーバーは、貼り付けるだけで追加できます。</small></span></li>
+  <li><span>「Minecraftで有効化」をタップします。<small>スマホが同じWi-Fiの中で橋渡し役になります。</small></span></li>
+  <li><span>ゲーム機で「プレイ」→「ワールド」を開きます。<small>「LAN ゲーム」にあるサーバーを選んで参加します。直接参加できたら、アプリは閉じてOKです。</small></span></li>
+</ol>
+
+<div class="shots" data-l="es">
+  <img src="shots/es-02.jpg" alt="Sin anuncios para conectar" loading="lazy"><img src="shots/es-03.jpg" alt="¿Está encendido? Míralo antes" loading="lazy"><img src="shots/es-06.jpg" alt="Ayuda paso a paso para PS y Xbox" loading="lazy">
+</div>
+<div class="shots" data-l="en">
+  <img src="shots/en-02.jpg" alt="No ads to connect" loading="lazy"><img src="shots/en-03.jpg" alt="Is it online? Check first" loading="lazy"><img src="shots/en-06.jpg" alt="Step-by-step help for PS and Xbox" loading="lazy">
+</div>
+<div class="shots" data-l="ja">
+  <img src="shots/ja-02.jpg" alt="接続のために広告を見る必要なし" loading="lazy"><img src="shots/ja-03.jpg" alt="サーバーの状態を参加前にチェック" loading="lazy"><img src="shots/ja-06.jpg" alt="外部サーバーの入り方をPS・Xbox別に案内" loading="lazy">
 </div>
 
-<h1>Entra a cualquier servidor de Minecraft Bedrock desde tu consola</h1>
-<p class="lead">Xbox y PlayStation. Sin DNS, sin PC, y sin ver anuncios para conectarte.</p>
-<p class="lead en">Join any Minecraft Bedrock server from your Xbox or PlayStation. No DNS, no PC, and no ads before you connect.</p>
-
-<div class="get">
-  <a class="cta" id="ios" href="https://apps.apple.com/app/apple-store/id6786974231?pt=129034241&amp;ct=web_home&amp;mt=8">
-    <div class="t1">iPhone</div>
-    <div class="t2">Gratis en el App Store · Free on the App Store</div>
-  </a>
-  <a class="cta" id="android" href="https://play.google.com/store/apps/details?id=com.bridgeplay.app&amp;referrer=utm_source%3Dweb%26utm_campaign%3Dweb_home">
-    <div class="t1">Android</div>
-    <div class="t2">Gratis en Google Play · Free on Google Play</div>
-  </a>
+<div class="label"><span data-l="es">Por qué BridgePlay</span><span data-l="en">Why BridgePlay</span><span data-l="ja">BridgePlayの特長</span></div>
+<div class="perks" data-l="es">
+  <div class="perk"><h3>Sin anuncios para conectar</h3><p>Conectar es gratis, sin videos ni esperas.</p></div>
+  <div class="perk"><h3>Sin DNS, sin PC, sin cuentas</h3><p>No cambias nada en la consola ni en el router. Todo queda en tu teléfono.</p></div>
+  <div class="perk"><h3>¿Está encendido?</h3><p>Ves el estado, los jugadores y el ping antes de entrar. Si tu Aternos está apagado, te avisa.</p></div>
+  <div class="perk"><h3>Entrar directo</h3><p>Cuando la consola entra directo al servidor, puedes cerrar la app y seguir jugando.</p></div>
+  <div class="perk"><h3>Aternos y Geyser</h3><p>Servidores Bedrock y servidores Java con Geyser (crossplay).</p></div>
+  <div class="perk"><h3>Lista para Minecraft 26.60</h3><p>Funciona con la versión nueva y con las anteriores.</p></div>
 </div>
-<div class="search">¿Desde otro lado? Busca «BridgePlay Bedrock» en tu tienda. · Search "BridgePlay Bedrock" in your store.</div>
-
-<div class="label">Cómo funciona · How it works</div>
-<div class="card">
-  <div class="step"><b>1</b><span>Guarda la dirección y el puerto de tu servidor (Aternos, Geyser o uno público). <span class="en">/ Save your server's address and port.</span></span></div>
-  <div class="step"><b>2</b><span>Toca «Activar para Minecraft». <span class="en">/ Tap "Activate for Minecraft".</span></span></div>
-  <div class="step"><b>3</b><span>En la consola: Jugar → Mundos → el mundo que dice LAN. <span class="en">/ On your console: Play → Worlds → the LAN world.</span></span></div>
+<div class="perks" data-l="en">
+  <div class="perk"><h3>No ads to connect</h3><p>Connecting is free: no videos, no waiting.</p></div>
+  <div class="perk"><h3>No DNS, no PC, no account</h3><p>Nothing to change on your console or router. Everything stays on your phone.</p></div>
+  <div class="perk"><h3>Is it online?</h3><p>See status, players and ping before you join. If your Aternos server is off, it tells you.</p></div>
+  <div class="perk"><h3>Join directly</h3><p>When your console joins the server directly, you can close the app and keep playing.</p></div>
+  <div class="perk"><h3>Aternos &amp; Geyser</h3><p>Bedrock servers and Java servers with Geyser (crossplay).</p></div>
+  <div class="perk"><h3>Ready for Minecraft 26.60</h3><p>Works with the new version and the earlier ones.</p></div>
 </div>
-
-<div class="label">Por qué BridgePlay · Why BridgePlay</div>
-<div class="perks">
-  <div class="perk"><h3>Nunca un anuncio para conectarte</h3><p>Conectar es gratis y sin esperas. / Never an ad before you connect.</p></div>
-  <div class="perk"><h3>Sin DNS ni PC</h3><p>Nada que configurar en la consola. / Nothing to set up on the console.</p></div>
-  <div class="perk"><h3>¿Está encendido?</h3><p>Ves el estado, los jugadores y el ping, y te avisa si tu Aternos está apagado. / See if your server is online before joining.</p></div>
-  <div class="perk"><h3>Entrar directo (beta)</h3><p>Entras y puedes cerrar la app. / Join, then close the app.</p></div>
-  <div class="perk"><h3>Aternos y Geyser</h3><p>Funciona con servidores Bedrock y con servidores Java con Geyser. / Works with Bedrock and Java + Geyser servers.</p></div>
-  <div class="perk"><h3>Sin cuentas</h3><p>Todo se guarda en tu teléfono. / Everything stays on your phone.</p></div>
+<div class="perks" data-l="ja">
+  <div class="perk"><h3>広告を見ずに接続</h3><p>接続は無料です。動画を見る必要も、待つ必要もありません。</p></div>
+  <div class="perk"><h3>DNSもPCもアカウントも不要</h3><p>ゲーム機やルーターの設定を変える必要はありません。データはすべてスマホの中に保存されます。</p></div>
+  <div class="perk"><h3>参加前に状態をチェック</h3><p>オンラインかどうか、人数、Pingが分かります。Aternosのサーバーが停止中なら、それも表示されます。</p></div>
+  <div class="perk"><h3>直接参加</h3><p>直接参加できたら、アプリを閉じてもそのまま遊べます。</p></div>
+  <div class="perk"><h3>AternosとGeyserに対応</h3><p>統合版のサーバーと、GeyserでクロスプレイできるJava版サーバーに対応。</p></div>
+  <div class="perk"><h3>Minecraft 26.60に対応</h3><p>新しいバージョンでも、以前のバージョンでも使えます。</p></div>
 </div>
 
-<div class="label">Preguntas frecuentes · FAQ</div>
-<div class="row">
-  <h3>No veo el servidor en Minecraft · I don't see the server</h3>
-  <p>1) Teléfono y consola en el mismo WiFi (no la red de invitados). 2) Revisa que el servidor esté encendido: BridgePlay te lo dice. 3) Cierra Minecraft por completo en la consola y ábrelo otra vez. 4) Apaga y prende el WiFi del teléfono.</p>
-  <p>1) Same WiFi for phone and console (not a guest network). 2) Make sure the server is online: BridgePlay shows it. 3) Fully close Minecraft on the console and open it again. 4) Turn your phone's WiFi off and on.</p>
-</div>
-<div class="row">
-  <h3>¿Tengo que dejar la app abierta? · Do I need to keep the app open?</h3>
-  <p>Con «Entrar directo» (beta), no: entras y puedes cerrarla. Con la conexión de siempre, sí: en iPhone déjala abierta en pantalla; en Android déjala activa (puedes salir de la app, pero no la cierres).</p>
-  <p>With "Join directly" (beta), no: you can close it after joining. With the usual connection, yes: keep it on screen on iPhone, or running on Android.</p>
-</div>
-<div class="row">
-  <h3>¿Dónde están los juegos LAN? · Where are LAN games?</h3>
-  <p>En la versión actual de Minecraft, en Jugar → Mundos (ya no en la pestaña Amigos). / In current Minecraft: Play → Worlds (no longer the Friends tab).</p>
-</div>
-<div class="row">
-  <h3>¿Y con Minecraft 26.60? · What about Minecraft 26.60?</h3>
-  <p>Desde el 27 de octubre las consolas solo entran a servidores con la «vía nueva» de Minecraft. Estamos preparando BridgePlay para eso, y tu servidor también tiene que estar listo: <a href="servidores-26-60.html">mira la guía</a>.</p>
-  <p>From October 27, consoles only join servers that speak Minecraft's new connection. We're getting BridgePlay ready, and your server needs to be ready too: <a href="servidores-26-60.html">see the guide</a>.</p>
-</div>
-<div class="row">
-  <h3>¿Funciona con Aternos? · Does it work with Aternos?</h3>
-  <p>Sí, con servidores Bedrock y con servidores Java que tienen Geyser (crossplay). Usa la dirección y el puerto de Bedrock que te muestra Aternos. / Yes, including Java servers with Geyser: use the Bedrock address and port Aternos shows you.</p>
-</div>
-<div class="row">
-  <h3>¿Funciona en Nintendo Switch? · Nintendo Switch?</h3>
-  <p>No. Minecraft en Switch no muestra juegos LAN. / No: Minecraft on Switch doesn't list LAN games.</p>
-</div>
-<div class="row">
-  <h3>¿Necesito cuenta? · Do I need an account?</h3>
-  <p>No. Todo se guarda en tu teléfono. / No. Everything stays on your phone.</p>
-</div>
-<div class="row">
-  <h3>Minecraft está en el mismo teléfono · Minecraft on the same phone</h3>
-  <p>Ciérralo por completo antes de activar: ambos usan la misma conexión. / Close it completely before activating: both use the same connection.</p>
+<div class="label"><span data-l="es">Preguntas frecuentes</span><span data-l="en">FAQ</span><span data-l="ja">よくある質問</span></div>
+
+<div data-l="es">
+  <details><summary>No veo el servidor en Minecraft</summary><div><ol>
+    <li>Teléfono y consola en el mismo WiFi (no la red de invitados).</li>
+    <li>Revisa que el servidor esté encendido: BridgePlay te lo dice.</li>
+    <li>Cierra Minecraft por completo en la consola y ábrelo otra vez. Si no basta, reinicia la consola.</li>
+    <li>Apaga y prende el WiFi del teléfono.</li>
+  </ol><p>En la app, la pestaña Ayuda tiene un diagnóstico que revisa todo esto por ti.</p></div></details>
+  <details><summary>¿Tengo que dejar la app abierta?</summary><div>
+    <p>Si la consola entró directo al servidor («¡Listo! Ya estás en tu servidor»), no: puedes cerrarla.</p>
+    <p>Con la conexión de siempre, sí: en iPhone déjala abierta en pantalla; en Android déjala activa (puedes salir de la app, pero no la cierres).</p></div></details>
+  <details><summary>¿Dónde aparece el servidor?</summary><div><p>En la versión actual de Minecraft: Jugar → Mundos, en la lista de mundos LAN.</p></div></details>
+  <details><summary>¿Y con Minecraft 26.60 (27 de octubre)?</summary><div>
+    <p>BridgePlay está lista desde la versión 1.5.0: las consolas con la versión nueva encuentran tu servidor y entran directo, si el servidor ya acepta la conexión nueva de Minecraft. Las versiones anteriores siguen funcionando como siempre.</p>
+    <p>¿Administras el servidor? <a href="servidores-26-60.html">Prepáralo para la 26.60</a>.</p></div></details>
+  <details><summary>¿Funciona con Aternos?</summary><div><p>Sí, con servidores Bedrock y con servidores Java que tienen Geyser (crossplay). Usa la dirección y el puerto de Bedrock que te muestra Aternos.</p></div></details>
+  <details><summary>¿Funciona en Nintendo Switch?</summary><div><p>No. Minecraft en Switch no muestra juegos LAN.</p></div></details>
+  <details><summary>¿Necesito cuenta?</summary><div><p>No. Todo se guarda en tu teléfono.</p></div></details>
+  <details><summary>Tengo Minecraft abierto en el mismo teléfono</summary><div><p>Ciérralo por completo antes de activar: los dos usan la misma conexión.</p></div></details>
 </div>
 
-<div class="label">Soporte · Support</div>
+<div data-l="en">
+  <details><summary>I don't see the server in Minecraft</summary><div><ol>
+    <li>Phone and console on the same WiFi (not a guest network).</li>
+    <li>Make sure the server is online: BridgePlay shows it.</li>
+    <li>Fully close Minecraft on your console and open it again. If that's not enough, restart the console.</li>
+    <li>Turn your phone's WiFi off and on.</li>
+  </ol><p>In the app, the Help tab has diagnostics that check all of this for you.</p></div></details>
+  <details><summary>Do I need to keep the app open?</summary><div>
+    <p>If your console joined the server directly ("Done! You're in your server"), no: you can close it.</p>
+    <p>With the usual connection, yes: keep it on screen on iPhone; on Android keep it running (you can leave the app, just don't close it).</p></div></details>
+  <details><summary>Where does the server show up?</summary><div><p>In current Minecraft: Play → Worlds, in the LAN worlds list.</p></div></details>
+  <details><summary>What about Minecraft 26.60 (October 27)?</summary><div>
+    <p>BridgePlay is ready since version 1.5.0: consoles on the new version find your server and join directly, if the server already accepts Minecraft's new connection. Earlier versions keep working as always.</p>
+    <p>Do you run the server? <a href="servidores-26-60.html">Get it ready for 26.60</a>.</p></div></details>
+  <details><summary>Does it work with Aternos?</summary><div><p>Yes, with Bedrock servers and with Java servers that have Geyser (crossplay). Use the Bedrock address and port Aternos shows you.</p></div></details>
+  <details><summary>Does it work on Nintendo Switch?</summary><div><p>No. Minecraft on Switch doesn't list LAN games.</p></div></details>
+  <details><summary>Do I need an account?</summary><div><p>No. Everything stays on your phone.</p></div></details>
+  <details><summary>Minecraft is open on the same phone</summary><div><p>Close it completely before activating: both use the same connection.</p></div></details>
+</div>
+
+<div data-l="ja">
+  <details><summary>Minecraftにサーバーが表示されない</summary><div><ol>
+    <li>スマホとゲーム機を同じWi-Fiにつなぎます（ゲスト用のネットワークは使えません）。</li>
+    <li>サーバーがオンラインか確認します。BridgePlayで確認できます。</li>
+    <li>ゲーム機のMinecraftを完全に終了して、もう一度起動します。それでも直らないときは、ゲーム機を再起動します。</li>
+    <li>スマホのWi-Fiをいったんオフにして、またオンにします。</li>
+  </ol><p>アプリの「ヘルプ」タブにある診断で、これらをまとめて確認できます。</p></div></details>
+  <details><summary>アプリは開いたままにする必要がある？</summary><div>
+    <p>ゲーム機がサーバーに直接入れた場合（「サーバーに入れました！」と表示されたとき）は、閉じても大丈夫です。</p>
+    <p>いつもの接続方法の場合は必要です。iPhoneでは画面に表示したまま、Androidでは起動したままにしてください（Androidは、ほかのアプリに切り替えてもOKですが、BridgePlayは終了しないでください）。</p></div></details>
+  <details><summary>サーバーはどこに表示される？</summary><div><p>現在のMinecraftでは「プレイ」→「ワールド」の「LAN ゲーム」に表示されます。</p></div></details>
+  <details><summary>Minecraft 26.60（10月27日）にも対応している？</summary><div>
+    <p>BridgePlayはバージョン1.5.0から対応済みです。新しいバージョンのゲーム機でもサーバーが見つかり、サーバー側が新しい接続方式に対応していれば直接参加できます。以前のバージョンのMinecraftも、これまでどおり使えます。</p>
+    <p>サーバーを管理している方は、<a href="servidores-26-60.html">26.60への対応方法</a>をご覧ください。</p></div></details>
+  <details><summary>Aternosで使える？</summary><div><p>はい。統合版のサーバーと、Geyserを入れたJava版サーバーに対応しています。Aternosに表示される統合版（Bedrock）用のアドレスとポートを使ってください。</p></div></details>
+  <details><summary>Nintendo Switchで使える？</summary><div><p>いいえ。Switch版のMinecraftにはLANゲームが表示されないため、使えません。</p></div></details>
+  <details><summary>アカウントは必要？</summary><div><p>不要です。データはすべてスマホの中だけに保存されます。</p></div></details>
+  <details><summary>同じスマホでMinecraftを開いている場合</summary><div><p>どちらも同じ接続を使うため、有効化する前にスマホのMinecraftを完全に終了してください。</p></div></details>
+</div>
+
+<div class="label"><span data-l="es">Soporte</span><span data-l="en">Support</span><span data-l="ja">サポート</span></div>
 <a class="cta" id="discord" href="https://discord.gg/EFEthtAZ9J">
-  <div class="t1">Discord de BridgePlay ↗</div>
-  <div class="t2">Soporte, novedades y Minecraft 26.60 · Support, news and Minecraft 26.60</div>
+  <div><div class="t1"><span data-l="es">Discord de BridgePlay ↗</span><span data-l="en">BridgePlay Discord ↗</span><span data-l="ja">BridgePlayのDiscord ↗</span></div>
+  <div class="t2"><span data-l="es">Soporte, novedades y Minecraft 26.60</span><span data-l="en">Support, news and Minecraft 26.60</span><span data-l="ja">サポート、お知らせ、Minecraft 26.60（英語・スペイン語）</span></div></div>
 </a>
-<div class="card" style="margin-top:14px;">
-  <p style="margin:0; font-size:19px; font-weight:600;">¿Problemas o preguntas? Escríbenos. <span class="en">/ Problems or questions? Write to us.</span></p>
+<div class="card" style="margin-top:12px">
+  <p style="margin:0 0 6px"><span data-l="es">¿Problemas o preguntas? Escríbenos.</span><span data-l="en">Problems or questions? Write to us.</span><span data-l="ja">困ったことや質問があれば、メールでご連絡ください。</span></p>
   <a class="mail" href="mailto:maurizzio.penalba@gmail.com">maurizzio.penalba@gmail.com</a>
 </div>
 
-<div class="foot">
-  <a href="privacy.html">Política de privacidad · Privacy Policy</a><br><br>
-  Esta app no está afiliada a Mojang, Microsoft, Xbox, PlayStation, Nintendo ni Minecraft.<br>
-  This app is not affiliated with Mojang, Microsoft, Xbox, PlayStation, Nintendo, or Minecraft.
-</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <a href="privacy.html"><span data-l="es">Política de privacidad</span><span data-l="en">Privacy Policy</span><span data-l="ja">プライバシーポリシー</span></a> ·
+  <a href="servidores-26-60.html"><span data-l="es">Guía 26.60 para servidores</span><span data-l="en">26.60 server guide</span><span data-l="ja">サーバー管理者向け26.60ガイド</span></a><br>
+  <span data-l="es">BridgePlay no es una app oficial de Minecraft y no está afiliada a Mojang, Microsoft, Xbox, PlayStation ni Nintendo.</span>
+  <span data-l="en">BridgePlay is not an official Minecraft app and is not affiliated with Mojang, Microsoft, Xbox, PlayStation or Nintendo.</span>
+  <span data-l="ja">BridgePlayはMinecraftの公式アプリではありません。Mojang、Microsoft、Xbox、PlayStation、任天堂とは提携していません。</span>
+</div></footer>
 
 <script>
   // Etiqueta de campaña según de dónde viene la visita (?from=tiktok → web_tiktok),

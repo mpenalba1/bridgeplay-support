@@ -1,160 +1,138 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"
+  data-title-es="Prepara tu servidor para Minecraft 26.60 — BridgePlay"
+  data-title-en="Get your server ready for Minecraft 26.60 — BridgePlay"
+  data-title-ja="サーバーをMinecraft 26.60に対応させる — BridgePlay">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prepara tu servidor para Minecraft 26.60 · Get your server ready for 26.60 — BridgePlay</title>
-<meta name="description" content="Desde Minecraft 26.60 (27-oct-2026) las consolas solo entran a servidores con la vía nueva (NetherNet). Cómo preparar Bedrock, Aternos y Java + Geyser. / How to get your server ready for Minecraft 26.60.">
-<meta property="og:title" content="Prepara tu servidor para Minecraft 26.60 · Get your server ready for 26.60">
+<title>Prepara tu servidor para Minecraft 26.60 — BridgePlay</title>
+<meta name="description" content="Desde Minecraft 26.60 (27-oct-2026) las consolas solo entran a servidores con la conexión nueva (NetherNet). Cómo preparar Bedrock, Aternos y Java + Geyser. / How to get your server ready for Minecraft 26.60. / Minecraft 26.60へのサーバー対応方法。">
+<meta property="og:title" content="Get your server ready for Minecraft 26.60 · Prepara tu servidor para la 26.60">
 <meta property="og:description" content="Consoles on Minecraft 26.60 only join servers that speak NetherNet. Here is how to get ready.">
 <meta property="og:image" content="https://mpenalba1.github.io/bridgeplay-support/logo.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg:#0D0D0D; --surface:#1C1C1A; --border:#F5F3EE; --dim-border:#4A4A46;
-    --text:#F5F3EE; --dim:#9C9C96; --grass:#4C9A2A; --diamond:#3FD9C4; --gold:#E8B923;
-  }
-  * { box-sizing:border-box; border-radius:0 !important; }
-  body {
-    background:var(--bg);
-    background-image:
-      linear-gradient(rgba(245,243,238,.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,243,238,.03) 1px, transparent 1px);
-    background-size:34px 34px;
-    color:var(--text);
-    font-family:'Barlow Condensed', sans-serif;
-    max-width:720px; margin:0 auto; padding:42px 21px; line-height:1.5;
-  }
-  .brand { display:flex; align-items:center; gap:13px; margin-bottom:26px; }
-  .brand img { width:44px; height:44px; }
-  .brand .name { font-weight:900; font-size:30px; letter-spacing:1px; margin:0; text-transform:uppercase; }
-  .brand .name span { color:var(--grass); }
-  h1 { font-weight:900; font-size:44px; line-height:1.02; margin:0 0 10px; text-transform:uppercase; letter-spacing:.5px; }
-  .en { color:var(--dim); font-weight:500; }
-  .lead { font-size:21px; font-weight:600; margin:0 0 6px; }
-  .lead.en { font-size:19px; }
-  .label {
-    font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:2px;
-    text-transform:uppercase; color:var(--dim); margin:42px 0 13px;
-  }
-  .get { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-top:26px; }
-  @media (max-width:560px) { .get { grid-template-columns:1fr; } h1 { font-size:36px; } }
-  .cta {
-    display:block; text-decoration:none; color:var(--text); background:var(--surface);
-    border:2px solid var(--border); border-left:8px solid var(--grass); padding:16px 18px;
-  }
-  .cta:hover { background:#24241f; }
-  .cta .t1 { font-weight:900; font-size:24px; text-transform:uppercase; letter-spacing:.5px; }
-  .cta .t2 { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); }
-  .search { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); margin-top:10px; }
-  .card { background:var(--surface); border:1px solid var(--dim-border); padding:21px; }
-  .step { display:flex; gap:13px; margin:10px 0; font-size:19px; font-weight:600; }
-  .step b { font-family:'JetBrains Mono', monospace; color:var(--grass); font-weight:700; }
-  .perks { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  @media (max-width:560px) { .perks { grid-template-columns:1fr; } }
-  .perk { border:1px solid var(--dim-border); padding:14px 16px; }
-  .perk h3 { margin:0 0 4px; font-size:19px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
-  .perk p { margin:0; font-size:16px; font-weight:500; color:var(--dim); }
-  .row { border:1px solid var(--dim-border); padding:16px 18px; margin:0 0 10px; }
-  .row h3 { margin:0 0 6px; font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
-  .row p { margin:0; color:var(--dim); font-size:17px; font-weight:500; }
-  .row p + p { margin-top:6px; }
-  .mail {
-    display:inline-block; font-family:'JetBrains Mono', monospace; font-size:15px;
-    color:var(--diamond); margin-top:10px;
-  }
-  a { color:var(--diamond); }
-  .foot {
-    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim);
-    border-top:1px solid var(--dim-border); margin-top:52px; padding-top:16px; line-height:1.8;
-  }
-  h2 { font-weight:900; font-size:26px; text-transform:uppercase; letter-spacing:.5px; margin:34px 0 10px; }
-  li { font-size:18px; font-weight:500; margin:6px 0; }
-  code { font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--diamond); }
-  .lang { border-top:2px solid var(--border); margin-top:46px; padding-top:6px; }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20261006b">
+<script src="lang.js?v=20261006b"></script>
 </head>
 <body>
-<div class="brand">
-  <a href="./"><img src="logo.png" alt="BridgePlay"></a>
-  <div class="name">Bridge<span>Play</span></div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.png" alt=""><b>BRIDGE<span>PLAY</span></b></a>
+  <nav class="langs" aria-label="Idioma / Language / 言語">
+    <button type="button" data-set="es" aria-pressed="true">ES</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+    <button type="button" data-set="ja" aria-pressed="false">日本語</button>
+  </nav>
+</div></header>
+
+<main class="wrap doc">
+
+<!-- ───────── Español ───────── -->
+<div data-l="es">
+  <h1>Prepara tu servidor para Minecraft 26.60</h1>
+  <p class="lead">Desde Minecraft 26.60 (27 de octubre de 2026), las consolas solo pueden entrar a servidores que hablen la conexión nueva de Minecraft (NetherNet).</p>
+  <div class="essential">Si tu servidor no la tiene, los jugadores con Xbox o PlayStation actualizados no podrán entrar, con o sin BridgePlay.</div>
+
+  <div class="card"><h2>¿Mi servidor ya está listo?</h2>
+    <p>BridgePlay (desde la versión 1.5.0) te lo dice en el detalle de tu servidor: «Acepta consolas con Minecraft 26.60 o más nuevo» o «Todavía no acepta consolas con Minecraft 26.60 o más nuevo».</p></div>
+
+  <details open><summary>Servidor oficial de Bedrock</summary><div><ul>
+    <li>Desde la 26.60 usa solo la conexión nueva (<code>transport=nethernet</code> en <code>server.properties</code>). Desde la 26.50 ya puedes activarla.</li>
+    <li>La conexión nueva usa TCP y UDP en el puerto del servidor (19132 por defecto). Abre los dos en tu router.</li>
+    <li>Si tu puerto público es distinto del interno: <code>server-udp-ports=&lt;IP pública&gt;:&lt;puerto público&gt;:&lt;puerto interno&gt;</code>.</li>
+  </ul></div></details>
+  <details><summary>Aternos</summary><div><ul>
+    <li>Bedrock: se actualiza solo a la conexión nueva.</li>
+    <li>Java + Geyser: Aternos atiende la conexión nueva en <code>tuservidor.aternos.me</code>, puerto 19132 (no en el puerto que te muestra para Bedrock). BridgePlay la encuentra sola.</li>
+    <li>Si al entrar ves «Duplicate handler name: rak-error-handler», tu Geyser está desactualizado: en Aternos ve a Plugins, busca GeyserMC, dale a instalar otra vez (baja la versión más reciente) y reinicia el servidor. (Confirmado por el equipo de Geyser.)</li>
+  </ul></div></details>
+  <details><summary>Java + Geyser (servidor propio o hosting)</summary><div><ul>
+    <li>Actualiza Geyser a una versión del 15 de septiembre de 2026 o posterior (soporte de Bedrock 26.50 y de la conexión nueva).</li>
+    <li>La conexión nueva necesita el puerto de Bedrock en TCP y en UDP. Ábrelos los dos.</li>
+    <li><code>clone-remote-port</code> ya no sirve: el puerto TCP chocaría con el de Java. Usa un puerto propio para Bedrock.</li>
+    <li>¿Tu hosting no te da un puerto TCP? Usa Warden, un servicio gratis que hace la parte TCP por ti (te da una dirección tipo <code>algo.wdn.gg</code>). Solo necesitas el puerto UDP.</li>
+  </ul></div></details>
+
+  <div class="card" style="margin-top:20px"><h2>¿Dudas?</h2>
+    <p>Pregunta en el <a href="https://discord.gg/EFEthtAZ9J">Discord de BridgePlay ↗</a> (canal #minecraft-26-60).</p></div>
+  <p class="note">Fuentes: <a href="https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition">Aternos — NetherNet</a> · <a href="https://github.com/GeyserMC/Geyser/pull/6703">Geyser #6703</a> · <a href="https://github.com/GeyserMC/Geyser/issues/6746">Geyser #6746</a> · Mojang bedrock-server 1.26.60 (server.properties) · pruebas de BridgePlay con Xbox, 3–5 oct 2026.</p>
 </div>
 
-<h1>Prepara tu servidor para Minecraft 26.60</h1>
-<p class="lead">Desde Minecraft 26.60 (27 de octubre de 2026), las consolas solo pueden entrar a servidores que hablen la «vía nueva» de Minecraft (NetherNet).</p>
-<p class="lead en">Get your server ready for Minecraft 26.60 — <a href="#en">English below</a>.</p>
-<p style="font-size:18px; color:var(--dim)">Si tu servidor no la tiene, los jugadores con Xbox o PlayStation actualizados no podrán entrar, con o sin BridgePlay.</p>
+<!-- ───────── English ───────── -->
+<div data-l="en">
+  <h1>Get your server ready for Minecraft 26.60</h1>
+  <p class="lead">From Minecraft 26.60 (October 27, 2026), consoles can only join servers that speak Minecraft's new connection (NetherNet).</p>
+  <div class="essential">If your server doesn't, players on updated Xbox or PlayStation can't join — with or without BridgePlay.</div>
 
-<h2>¿Mi servidor ya está listo?</h2>
-<div class="card">
-  <p style="margin:0; font-size:18px;">La próxima versión de BridgePlay (antes del 27 de octubre) te lo dirá en el detalle de tu servidor: <b>«Acepta consolas con Minecraft 26.60 o más nuevo»</b> o <b>«Todavía no acepta…»</b>.</p>
+  <div class="card"><h2>Is my server ready?</h2>
+    <p>BridgePlay (version 1.5.0 or later) shows it on your server's details: "Accepts consoles on Minecraft 26.60 or newer" or "Doesn't accept consoles on Minecraft 26.60 or newer yet".</p></div>
+
+  <details open><summary>Official Bedrock server</summary><div><ul>
+    <li>From 26.60 it only uses the new connection (<code>transport=nethernet</code> in <code>server.properties</code>). From 26.50 you can switch early.</li>
+    <li>The new connection uses TCP and UDP on the server port (19132 by default). Open both on your router.</li>
+    <li>If your public port differs from the internal one: <code>server-udp-ports=&lt;public IP&gt;:&lt;public port&gt;:&lt;internal port&gt;</code>.</li>
+  </ul></div></details>
+  <details><summary>Aternos</summary><div><ul>
+    <li>Bedrock: switches to the new connection automatically.</li>
+    <li>Java + Geyser: Aternos serves the new connection at <code>yourserver.aternos.me</code>, port 19132 (not the Bedrock port it shows you). BridgePlay finds it on its own.</li>
+    <li>If you see "Duplicate handler name: rak-error-handler", your Geyser is outdated: on Aternos go to Plugins, search GeyserMC, hit install again (it fetches the latest build) and restart the server. (Confirmed by the Geyser team.)</li>
+  </ul></div></details>
+  <details><summary>Java + Geyser (self-hosted or on a host)</summary><div><ul>
+    <li>Update Geyser to a build from September 15, 2026 or later (Bedrock 26.50 + new connection support).</li>
+    <li>The new connection needs the Bedrock port on both TCP and UDP. Open both.</li>
+    <li><code>clone-remote-port</code> no longer works: the TCP port would clash with Java's. Give Bedrock its own port.</li>
+    <li>Your host doesn't give you a TCP port? Use Warden, a free service that handles the TCP part for you (you get an address like <code>something.wdn.gg</code>). You only need the UDP port.</li>
+  </ul></div></details>
+
+  <div class="card" style="margin-top:20px"><h2>Questions?</h2>
+    <p>Ask in the <a href="https://discord.gg/EFEthtAZ9J">BridgePlay Discord ↗</a> (#minecraft-26-60 channel).</p></div>
+  <p class="note">Sources: <a href="https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition">Aternos — NetherNet</a> · <a href="https://github.com/GeyserMC/Geyser/pull/6703">Geyser #6703</a> · <a href="https://github.com/GeyserMC/Geyser/issues/6746">Geyser #6746</a> · Mojang bedrock-server 1.26.60 (server.properties) · BridgePlay tests with Xbox, Oct 3–5, 2026.</p>
 </div>
 
-<h2>Servidor oficial de Bedrock</h2>
-<ul>
-  <li>Desde la 26.60 usa <b>solo</b> la vía nueva (<code>transport=nethernet</code> en <code>server.properties</code>). Desde la 26.50 ya puedes activarla.</li>
-  <li>La vía nueva usa <b>TCP y UDP</b> en el puerto del servidor (19132 por defecto). Abre <b>los dos</b> en tu router.</li>
-  <li>Si tu puerto público es distinto del interno: <code>server-udp-ports=&lt;IP pública&gt;:&lt;puerto público&gt;:&lt;puerto interno&gt;</code>.</li>
-</ul>
+<!-- ───────── 日本語 ───────── -->
+<div data-l="ja">
+  <h1>サーバーをMinecraft 26.60に対応させる</h1>
+  <p class="lead">Minecraft 26.60（2026年10月27日）から、ゲーム機はMinecraftの新しい接続方式（NetherNet）に対応したサーバーにしか参加できなくなります。</p>
+  <div class="essential">サーバーが対応していないと、アップデート済みのXboxやPlayStationからは、BridgePlayの有無にかかわらず参加できません。</div>
 
-<h2>Aternos</h2>
-<ul>
-  <li><b>Bedrock:</b> se actualiza solo a la vía nueva.</li>
-  <li><b>Java + Geyser:</b> Aternos atiende la vía nueva en <code>tuservidor.aternos.me</code>, <b>puerto 19132</b> (no en el puerto que te muestra para Bedrock). La próxima versión de BridgePlay la encuentra sola.</li>
-  <li>Si al entrar ves <i>«Duplicate handler name: rak-error-handler»</i>, tu Geyser está desactualizado: en Aternos ve a <b>Plugins</b>, busca <b>GeyserMC</b>, dale a <b>instalar otra vez</b> (baja la versión más reciente) y reinicia el servidor. (<a href="https://github.com/GeyserMC/Geyser/issues/6746">Confirmado por el equipo de Geyser</a>.)</li>
-</ul>
+  <div class="card"><h2>自分のサーバーは対応している？</h2>
+    <p>BridgePlay（バージョン1.5.0以降）のサーバーの「詳細」画面に、「ゲーム機のMinecraftが26.60以降でも参加できます」または「ゲーム機のMinecraftが26.60以降だと、まだ参加できません」と表示されます。</p></div>
 
-<h2>Java + Geyser (servidor propio o hosting)</h2>
-<ul>
-  <li><b>Actualiza Geyser</b> a una versión del 15 de septiembre de 2026 o posterior (soporte de Bedrock 26.50 y de la vía nueva).</li>
-  <li>La vía nueva necesita el puerto de Bedrock <b>en TCP y en UDP</b>. Ábrelos los dos.</li>
-  <li><b><code>clone-remote-port</code> ya no sirve</b>: el puerto TCP chocaría con el de Java. Usa un puerto propio para Bedrock.</li>
-  <li>¿Tu hosting no te da un puerto TCP? Usa <b>Warden</b>, un servicio gratis que hace la parte TCP por ti (te da una dirección tipo <code>algo.wdn.gg</code>). Solo necesitas el puerto UDP.</li>
-</ul>
+  <details open><summary>公式の統合版サーバー（BDS）</summary><div><ul>
+    <li>26.60からは新しい接続方式だけを使います（<code>server.properties</code>の<code>transport=nethernet</code>）。26.50から前もって切り替えることもできます。</li>
+    <li>新しい接続方式は、サーバーのポート（初期値は19132）でTCPとUDPの両方を使います。ルーターで両方を開放してください。</li>
+    <li>外部ポートと内部ポートが違う場合：<code>server-udp-ports=&lt;グローバルIP&gt;:&lt;外部ポート&gt;:&lt;内部ポート&gt;</code></li>
+  </ul></div></details>
+  <details><summary>Aternos</summary><div><ul>
+    <li>統合版：自動で新しい接続方式に切り替わります。</li>
+    <li>Java版＋Geyser：Aternosは新しい接続方式を<code>サーバー名.aternos.me</code>のポート19132で受け付けます（統合版用に表示されるポートではありません）。BridgePlayはこのポートを自動で見つけます。</li>
+    <li>参加時に「Duplicate handler name: rak-error-handler」と表示される場合は、Geyserのバージョンが古くなっています。Aternosの「プラグイン」（Plugins）でGeyserMCを検索し、もう一度インストールして（最新版が入ります）から、サーバーを再起動してください（Geyserの開発チームに確認済みの方法です）。</li>
+  </ul></div></details>
+  <details><summary>Java版＋Geyser（自宅サーバー・レンタルサーバー）</summary><div><ul>
+    <li>Geyserを2026年9月15日以降のビルドに更新してください（統合版26.50と新しい接続方式に対応）。</li>
+    <li>新しい接続方式には、統合版用ポートのTCPとUDPの両方が必要です。両方を開放してください。</li>
+    <li><code>clone-remote-port</code>は使えなくなりました（TCPポートがJava版と競合するため）。統合版には専用のポートを割り当ててください。</li>
+    <li>レンタルサーバーでTCPポートが使えない場合は、TCPの部分を代わりに処理してくれる無料サービス「Warden」が使えます（<code>○○.wdn.gg</code>のようなアドレスが発行されます）。この場合、必要なのはUDPポートだけです。</li>
+  </ul></div></details>
 
-<div class="lang" id="en"></div>
-<h1>Get your server ready for Minecraft 26.60</h1>
-<p class="lead">From Minecraft 26.60 (October 27, 2026), consoles can only join servers that speak Minecraft's «new connection» (NetherNet).</p>
-<p style="font-size:18px; color:var(--dim)">If your server doesn't, players on updated Xbox or PlayStation can't join — with or without BridgePlay.</p>
-
-<h2>Is my server ready?</h2>
-<div class="card">
-  <p style="margin:0; font-size:18px;">The next BridgePlay version (before October 27) shows it on your server's details: <b>"Accepts consoles on Minecraft 26.60 or newer"</b> or <b>"Doesn't accept… yet"</b>.</p>
+  <div class="card" style="margin-top:20px"><h2>質問があるときは</h2>
+    <p><a href="https://discord.gg/EFEthtAZ9J">BridgePlayのDiscord ↗</a>（#minecraft-26-60チャンネル、英語・スペイン語）で質問できます。</p></div>
+  <p class="note">出典：<a href="https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition">Aternos — NetherNet</a> · <a href="https://github.com/GeyserMC/Geyser/pull/6703">Geyser #6703</a> · <a href="https://github.com/GeyserMC/Geyser/issues/6746">Geyser #6746</a> · Mojang bedrock-server 1.26.60（server.properties） · BridgePlayによるXboxでの検証（2026年10月3〜5日）</p>
 </div>
 
-<h2>Official Bedrock server</h2>
-<ul>
-  <li>From 26.60 it <b>only</b> uses the new connection (<code>transport=nethernet</code> in <code>server.properties</code>). From 26.50 you can switch early.</li>
-  <li>The new connection uses <b>TCP and UDP</b> on the server port (19132 by default). Open <b>both</b> on your router.</li>
-  <li>If your public port differs from the internal one: <code>server-udp-ports=&lt;public IP&gt;:&lt;public port&gt;:&lt;internal port&gt;</code>.</li>
-</ul>
+</main>
 
-<h2>Aternos</h2>
-<ul>
-  <li><b>Bedrock:</b> switches to the new connection automatically.</li>
-  <li><b>Java + Geyser:</b> Aternos serves the new connection at <code>yourserver.aternos.me</code>, <b>port 19132</b> (not the Bedrock port it shows you). The next BridgePlay version finds it on its own.</li>
-  <li>If you see <i>"Duplicate handler name: rak-error-handler"</i>, your Geyser is outdated: on Aternos go to <b>Plugins</b>, search <b>GeyserMC</b>, hit <b>install again</b> (it fetches the latest build) and restart the server. (<a href="https://github.com/GeyserMC/Geyser/issues/6746">Confirmed by the Geyser team</a>.)</li>
-</ul>
-
-<h2>Java + Geyser (self-hosted or on a host)</h2>
-<ul>
-  <li><b>Update Geyser</b> to a build from September 15, 2026 or later (Bedrock 26.50 + new connection support).</li>
-  <li>The new connection needs the Bedrock port on <b>both TCP and UDP</b>. Open both.</li>
-  <li><b><code>clone-remote-port</code> no longer works</b>: the TCP port would clash with Java's. Give Bedrock its own port.</li>
-  <li>Your host doesn't give you a TCP port? Use <b>Warden</b>, a free service that handles the TCP part for you (you get an address like <code>something.wdn.gg</code>). You only need the UDP port.</li>
-</ul>
-
-<p><b>¿Dudas? · Questions?</b> Pregunta en el <a href="https://discord.gg/EFEthtAZ9J">Discord de BridgePlay ↗</a> (canal #minecraft-26-60). / Ask in the BridgePlay Discord (#minecraft-26-60 channel).</p>
-
-<div class="foot">
-  Fuentes · Sources: <a href="https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition">Aternos — NetherNet</a> ·
-  <a href="https://github.com/GeyserMC/Geyser/pull/6703">Geyser #6703</a> · Mojang bedrock-server 1.26.60 (<code>server.properties</code>) · pruebas de BridgePlay con Xbox, 3–4 oct 2026.<br><br>
-  <a href="./">← BridgePlay</a> · <a href="privacy.html">Privacidad · Privacy</a><br><br>
-  Esta app no está afiliada a Mojang, Microsoft, Xbox, PlayStation, Nintendo ni Minecraft.<br>
-  This app is not affiliated with Mojang, Microsoft, Xbox, PlayStation, Nintendo, or Minecraft.
-</div>
+<footer class="foot"><div class="wrap">
+  <a href="./">← BridgePlay</a> ·
+  <a href="privacy.html"><span data-l="es">Política de privacidad</span><span data-l="en">Privacy Policy</span><span data-l="ja">プライバシーポリシー</span></a><br>
+  <span data-l="es">BridgePlay no es una app oficial de Minecraft y no está afiliada a Mojang, Microsoft, Xbox, PlayStation ni Nintendo.</span>
+  <span data-l="en">BridgePlay is not an official Minecraft app and is not affiliated with Mojang, Microsoft, Xbox, PlayStation or Nintendo.</span>
+  <span data-l="ja">BridgePlayはMinecraftの公式アプリではありません。Mojang、Microsoft、Xbox、PlayStation、任天堂とは提携していません。</span>
+</div></footer>
 </body>
 </html>

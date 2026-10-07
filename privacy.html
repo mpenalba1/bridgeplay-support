@@ -1,73 +1,82 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"
+  data-title-es="Política de privacidad — BridgePlay"
+  data-title-en="Privacy Policy — BridgePlay"
+  data-title-ja="プライバシーポリシー — BridgePlay">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BridgePlay — Política de privacidad / Privacy Policy</title>
+<title>Política de privacidad — BridgePlay</title>
+<meta name="description" content="BridgePlay no tiene cuentas ni servidores propios y no recolecta tus datos. BridgePlay has no accounts, no servers of its own, and does not collect your data.">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg:#0D0D0D; --surface:#1C1C1A; --border:#F5F3EE; --dim-border:#4A4A46;
-    --text:#F5F3EE; --dim:#9C9C96; --grass:#4C9A2A; --diamond:#3FD9C4;
-  }
-  * { box-sizing:border-box; border-radius:0 !important; }
-  body {
-    background:var(--bg);
-    background-image:
-      linear-gradient(rgba(245,243,238,.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,243,238,.03) 1px, transparent 1px);
-    background-size:34px 34px;
-    color:var(--text);
-    font-family:'Barlow Condensed', sans-serif;
-    max-width:680px; margin:0 auto; padding:42px 21px; line-height:1.55;
-  }
-  .brand { display:flex; align-items:center; gap:13px; margin-bottom:8px; }
-  .brand img { width:36px; height:36px; }
-  .brand a { font-weight:900; font-size:26px; letter-spacing:1px; text-transform:uppercase;
-             color:var(--text); text-decoration:none; }
-  .brand a span { color:var(--grass); }
-  h1 { font-weight:900; font-size:32px; text-transform:uppercase; letter-spacing:1px; margin:26px 0 4px; }
-  .updated { font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--dim); margin:0 0 26px; }
-  .label {
-    font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:2px;
-    text-transform:uppercase; color:var(--dim); margin:34px 0 10px;
-    border-top:1px solid var(--dim-border); padding-top:16px;
-  }
-  p { font-size:18px; font-weight:500; margin:0 0 12px; }
-  .en { color:var(--dim); }
-  a { color:var(--diamond); }
-  .essential { background:var(--surface); border:2px solid var(--border); padding:18px 21px; }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20261006b">
+<script src="lang.js?v=20261006b"></script>
 </head>
 <body>
-<div class="brand">
-  <img src="logo.png" alt="BridgePlay">
-  <a href="index.html">Bridge<span>Play</span></a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.png" alt=""><b>BRIDGE<span>PLAY</span></b></a>
+  <nav class="langs" aria-label="Idioma / Language / 言語">
+    <button type="button" data-set="es" aria-pressed="true">ES</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+    <button type="button" data-set="ja" aria-pressed="false">日本語</button>
+  </nav>
+</div></header>
+
+<main class="wrap doc">
+
+<div data-l="es">
+  <h1>Política de privacidad</h1>
+  <p class="note">Última actualización: 2026-07-28</p>
+  <div class="essential">Lo esencial: BridgePlay no tiene cuentas, no tiene servidores propios y no recolecta ni envía tus datos. Las direcciones que guardas, tus favoritos y tus ajustes viven únicamente en tu teléfono. Si borras la app, se borran con ella.</div>
+  <div class="card"><h2>Anuncios</h2>
+    <p>La versión gratuita muestra un banner discreto servido por Google AdMob. El SDK de Google puede recolectar identificadores del dispositivo, datos de interacción con anuncios y diagnóstico para servir y medir anuncios. BridgePlay no te rastrea entre apps: en iPhone no usa App Tracking Transparency y en Android no usa el identificador de publicidad para seguirte fuera de la app. Consulta la <a href="https://policies.google.com/privacy">política de privacidad de Google</a>. La compra única de Premium elimina los anuncios.</p></div>
+  <div class="card"><h2>Compras</h2>
+    <p>La compra de Premium la procesa la tienda de tu dispositivo (App Store en iPhone, Google Play en Android). BridgePlay nunca ve ni guarda datos de pago.</p></div>
+  <div class="card"><h2>Red local</h2>
+    <p>BridgePlay usa tu red local únicamente para que Minecraft encuentre el servidor que activaste. Ese tráfico va directo entre tus dispositivos y el servidor al que te conectas: no pasa por servidores nuestros (no tenemos).</p></div>
+  <div class="card"><h2>Contacto</h2>
+    <p><a class="mail" href="mailto:maurizzio.penalba@gmail.com">maurizzio.penalba@gmail.com</a></p></div>
 </div>
 
-<h1>Política de privacidad · Privacy Policy</h1>
-<p class="updated">Última actualización / Last updated: 2026-07-28</p>
-
-<div class="essential">
-  <p><strong>Lo esencial:</strong> BridgePlay no tiene cuentas, no tiene servidores propios y no recolecta ni envía tus datos. Las direcciones que guardas, tus favoritos y tus ajustes viven únicamente en tu teléfono. Si borras la app, se borran contigo.</p>
-  <p class="en"><strong>The essentials:</strong> BridgePlay has no accounts, no servers of its own, and does not collect or send your data. What you save lives only on your phone. Delete the app and it's gone with it.</p>
+<div data-l="en">
+  <h1>Privacy Policy</h1>
+  <p class="note">Last updated: 2026-07-28</p>
+  <div class="essential">The essentials: BridgePlay has no accounts, no servers of its own, and does not collect or send your data. The addresses you save, your favorites and your settings live only on your phone. Delete the app and they're gone with it.</div>
+  <div class="card"><h2>Ads</h2>
+    <p>The free version shows a discreet banner served by Google AdMob. Google's SDK may collect device identifiers, ad-interaction data and diagnostics to serve and measure ads. BridgePlay does not track you across apps: on iPhone it does not use App Tracking Transparency, and on Android it does not use the advertising ID to track you across apps. See <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The one-time Premium purchase removes ads entirely.</p></div>
+  <div class="card"><h2>Purchases</h2>
+    <p>The Premium purchase is processed by your device's store (the App Store on iPhone, Google Play on Android). BridgePlay never sees or stores payment data.</p></div>
+  <div class="card"><h2>Local network</h2>
+    <p>BridgePlay uses your local network only so Minecraft can find the server you activated. That traffic flows directly between your devices and the server you join — never through our servers (we don't have any).</p></div>
+  <div class="card"><h2>Contact</h2>
+    <p><a class="mail" href="mailto:maurizzio.penalba@gmail.com">maurizzio.penalba@gmail.com</a></p></div>
 </div>
 
-<div class="label">Anuncios · Ads</div>
-<p>La versión gratuita muestra un banner discreto servido por Google AdMob. El SDK de Google puede recolectar identificadores del dispositivo, datos de interacción con anuncios y diagnóstico para servir y medir anuncios. BridgePlay no te rastrea entre apps: en iPhone no usa App Tracking Transparency y en Android no usa el identificador de publicidad para seguirte fuera de la app. Consulta la <a href="https://policies.google.com/privacy">política de privacidad de Google</a>. La compra única de Premium elimina los anuncios.</p>
-<p class="en">The free version shows a discreet banner served by Google AdMob. Google's SDK may collect device identifiers, ad-interaction data and diagnostics to serve and measure ads. BridgePlay does not track you across apps: on iPhone it does not use App Tracking Transparency, and on Android it does not use the advertising ID to track you across apps. See <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The one-time Premium purchase removes ads entirely.</p>
+<div data-l="ja">
+  <h1>プライバシーポリシー</h1>
+  <p class="note">最終更新日：2026年7月28日（日本語版の追加：2026年10月6日）</p>
+  <div class="essential">要点：BridgePlayにはアカウントも独自のサーバーもなく、ユーザーのデータを収集・送信することはありません。保存したサーバーのアドレス、お気に入り、設定は、すべてスマホの中だけに保存されます。アプリを削除すると、これらのデータも一緒に削除されます。</div>
+  <div class="card"><h2>広告</h2>
+    <p>無料版では、Google AdMobが配信する控えめなバナー広告を表示します。広告の配信と効果測定のため、GoogleのSDKが端末の識別子、広告の操作に関するデータ、診断データを収集する場合があります。BridgePlayが、ほかのアプリをまたいでユーザーを追跡することはありません。iPhoneではApp Tracking Transparencyを使用せず、Androidでは広告IDをアプリの外での追跡に使用しません。詳しくは<a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a>をご覧ください。プレミアム（買い切り）を購入すると、広告はすべて表示されなくなります。</p></div>
+  <div class="card"><h2>購入</h2>
+    <p>プレミアムの購入は、お使いの端末のストア（iPhoneはApp Store、AndroidはGoogle Play）が処理します。BridgePlayが支払い情報を見たり保存したりすることはありません。</p></div>
+  <div class="card"><h2>ローカルネットワーク</h2>
+    <p>BridgePlayがローカルネットワークを使うのは、有効にしたサーバーをMinecraftに見つけてもらうためだけです。この通信はお使いの機器と参加先のサーバーの間で直接行われ、BridgePlay側のサーバーを経由することはありません（BridgePlayはサーバーを持っていません）。</p></div>
+  <div class="card"><h2>お問い合わせ</h2>
+    <p><a class="mail" href="mailto:maurizzio.penalba@gmail.com">maurizzio.penalba@gmail.com</a></p></div>
+</div>
 
-<div class="label">Compras · Purchases</div>
-<p>La compra de Premium la procesa la tienda de tu dispositivo (App Store en iPhone, Google Play en Android). BridgePlay nunca ve ni guarda datos de pago.</p>
-<p class="en">The Premium purchase is processed by your device's store (the App Store on iPhone, Google Play on Android). BridgePlay never sees or stores payment data.</p>
+</main>
 
-<div class="label">Red local · Local network</div>
-<p>BridgePlay usa tu red local únicamente para que Minecraft encuentre el servidor que activaste. Ese tráfico va directo entre tus dispositivos y el servidor al que te conectas — no pasa por servidores nuestros (no tenemos).</p>
-<p class="en">BridgePlay uses your local network only so Minecraft can find the server you activated. That traffic flows directly between your devices and the server you join — never through our servers (we don't have any).</p>
-
-<div class="label">Contacto · Contact</div>
-<p><a href="mailto:maurizzio.penalba@gmail.com">maurizzio.penalba@gmail.com</a></p>
+<footer class="foot"><div class="wrap">
+  <a href="./">← BridgePlay</a><br>
+  <span data-l="es">BridgePlay no es una app oficial de Minecraft y no está afiliada a Mojang, Microsoft, Xbox, PlayStation ni Nintendo.</span>
+  <span data-l="en">BridgePlay is not an official Minecraft app and is not affiliated with Mojang, Microsoft, Xbox, PlayStation or Nintendo.</span>
+  <span data-l="ja">BridgePlayはMinecraftの公式アプリではありません。Mojang、Microsoft、Xbox、PlayStation、任天堂とは提携していません。</span>
+</div></footer>
 </body>
 </html>
