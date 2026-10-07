@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es"
+  data-title-es="Cómo entrar a tu server de Aternos desde Xbox o PlayStation (2026) — BridgePlay"
+  data-title-en="How to join your Aternos server from Xbox or PlayStation (2026) — BridgePlay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo entrar a tu server de Aternos desde Xbox o PlayStation (2026) — BridgePlay</title>
+<meta name="description" content="Guía 2026 para entrar a un server de Aternos (Bedrock o Java con Geyser) desde Xbox o PlayStation, con el menú nuevo Jugar → Mundos. Sin DNS y sin PC. / 2026 guide: join your Aternos server from Xbox or PlayStation with the new Play → Worlds menu.">
+<meta property="og:title" content="Tu server de Aternos en Xbox o PlayStation · Your Aternos server on Xbox or PlayStation">
+<meta property="og:description" content="Paso a paso, al día con el menú nuevo (Jugar → Mundos). Step by step, up to date with the new menu (Play → Worlds).">
+<meta property="og:image" content="https://mpenalba1.github.io/bridgeplay-support/logo.png">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20261006b">
+<script src="lang.js?v=20261006b"></script>
+<script>
+  // Esta guía existe en español e inglés: el japonés cae al inglés.
+  if (document.documentElement.getAttribute("data-lang") === "ja") {
+    document.documentElement.setAttribute("data-lang", "en");
+    document.documentElement.setAttribute("lang", "en");
+    document.title = document.documentElement.getAttribute("data-title-en");
+  }
+</script>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.png" alt=""><b>BRIDGE<span>PLAY</span></b></a>
+  <nav class="langs" aria-label="Idioma / Language">
+    <button type="button" data-set="es" aria-pressed="true">ES</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+  </nav>
+</div></header>
+
+<main class="wrap doc">
+
+<!-- ───────── Español ───────── -->
+<div data-l="es">
+  <h1>Cómo entrar a tu server de Aternos desde Xbox o PlayStation</h1>
+  <p class="lead">Guía al día (octubre de 2026), con el menú nuevo de Minecraft: los mundos LAN ahora están en <b>Jugar → Mundos</b>, ya no en la pestaña Amigos.</p>
+  <div class="essential">En consola Minecraft no te deja escribir la dirección de un server: solo muestra los destacados. La forma más simple es que tu teléfono haga aparecer tu server de Aternos como un mundo LAN.</div>
+
+  <div class="card"><h2>Lo que necesitas</h2><ul>
+    <li>Tu server de Aternos <b>encendido</b> (enciéndelo en aternos.org).</li>
+    <li>Su dirección y su puerto (salen en el panel de tu server en Aternos). Si tu server es de Java con Geyser, usa el <b>puerto de Bedrock</b>, no el de Java.</li>
+    <li>Un iPhone o Android y la consola en el <b>mismo WiFi</b> (no la red de invitados).</li>
+  </ul></div>
+
+  <h2 class="label" style="margin-top:28px">Paso a paso</h2>
+  <ol class="steps">
+    <li><div>Instala BridgePlay (gratis) en tu teléfono.<small>Abajo están los botones de descarga.</small></div></li>
+    <li><div>Toca «Agregar servidor», pega la dirección y el puerto de Aternos y toca «Guardar servidor».<small>La app te dice si el server está encendido antes de que pierdas el tiempo.</small></div></li>
+    <li><div>Abre tu server y toca «Activar para Minecraft».</div></li>
+    <li><div>En la consola, cierra Minecraft por completo y vuelve a abrirlo.</div></li>
+    <li><div>Ve a <b>Jugar → Mundos</b> y baja hasta el mundo LAN que dice «BridgePlay». Entra.</div></li>
+  </ol>
+
+  <div class="get" style="margin-top:20px">
+    <a class="cta" id="ios-es" href="https://apps.apple.com/app/apple-store/id6786974231?pt=129034241&amp;ct=web_guia_aternos&amp;mt=8">
+      <div><div class="t1">iPhone</div><div class="t2">Gratis en el App Store</div></div>
+    </a>
+    <a class="cta" id="android-es" href="https://play.google.com/store/apps/details?id=com.bridgeplay.app&amp;referrer=utm_source%3Dweb%26utm_campaign%3Dweb_guia_aternos">
+      <div><div class="t1">Android</div><div class="t2">Gratis en Google Play</div></div>
+    </a>
+  </div>
+  <p class="note">¿No abre el enlace? Busca «BridgePlay Bedrock» en tu tienda.</p>
+
+  <h2 class="label" style="margin-top:32px">Si algo no sale</h2>
+  <details><summary>No aparece el mundo LAN</summary><div><ul>
+    <li>Revisa que el teléfono y la consola estén en el mismo WiFi (no la red de invitados).</li>
+    <li>Apaga y prende el WiFi del teléfono, y vuelve a abrir Minecraft en la consola.</li>
+    <li>Mira en Jugar → Mundos, no en Servidores ni en Amigos.</li>
+  </ul></div></details>
+  <details><summary>Aparece, pero no entra</summary><div><ul>
+    <li>Aternos apaga el server si nadie entra en unos minutos: enciéndelo otra vez. BridgePlay te avisa cuando está apagado.</li>
+    <li>Java con Geyser: revisa que usaste el puerto de Bedrock (el de Geyser), no el de Java.</li>
+  </ul></div></details>
+  <details><summary>¿Y Minecraft 26.60 (27 de octubre)?</summary><div>
+    <p>Desde esa versión las consolas solo entran a servers con la conexión nueva. Los de Aternos Bedrock se actualizan solos; si usas Java con Geyser, mira <a href="servidores-26-60.html">cómo preparar tu server para la 26.60</a>.</p>
+  </div></details>
+  <details><summary>¿Hay otras formas?</summary><div>
+    <p>Sí: cambiar el DNS de la consola, otras apps de teléfono o un programa en la PC. Todas sirven; BridgePlay es la que no te hace ver anuncios para conectarte y no toca la configuración de tu consola.</p>
+  </div></details>
+
+  <div class="card" style="margin-top:20px"><h2>¿Dudas?</h2>
+    <p>Pregunta en el <a href="https://discord.gg/EFEthtAZ9J">Discord de BridgePlay ↗</a>.</p></div>
+</div>
+
+<!-- ───────── English ───────── -->
+<div data-l="en">
+  <h1>How to join your Aternos server from Xbox or PlayStation</h1>
+  <p class="lead">Up-to-date guide (October 2026) for Minecraft's new menu: LAN worlds now live under <b>Play → Worlds</b>, not the Friends tab.</p>
+  <div class="essential">On consoles, Minecraft won't let you type a server address — it only shows the featured servers. The simplest fix is to let your phone show your Aternos server as a LAN world.</div>
+
+  <div class="card"><h2>What you need</h2><ul>
+    <li>Your Aternos server <b>online</b> (start it on aternos.org).</li>
+    <li>Its address and port (shown on your server's page on Aternos). If it's a Java server with Geyser, use the <b>Bedrock port</b>, not the Java one.</li>
+    <li>An iPhone or Android and your console on the <b>same Wi-Fi</b> (not a guest network).</li>
+  </ul></div>
+
+  <h2 class="label" style="margin-top:28px">Step by step</h2>
+  <ol class="steps">
+    <li><div>Install BridgePlay (free) on your phone.<small>Download buttons are below.</small></div></li>
+    <li><div>Tap "Add server", paste your Aternos address and port, and tap "Save server".<small>The app tells you if the server is online before you waste your time.</small></div></li>
+    <li><div>Open your server and tap "Activate for Minecraft".</div></li>
+    <li><div>On your console, fully close Minecraft and open it again.</div></li>
+    <li><div>Go to <b>Play → Worlds</b> and scroll down to the LAN world that says "BridgePlay". Join.</div></li>
+  </ol>
+
+  <div class="get" style="margin-top:20px">
+    <a class="cta" id="ios-en" href="https://apps.apple.com/app/apple-store/id6786974231?pt=129034241&amp;ct=web_guia_aternos&amp;mt=8">
+      <div><div class="t1">iPhone</div><div class="t2">Free on the App Store</div></div>
+    </a>
+    <a class="cta" id="android-en" href="https://play.google.com/store/apps/details?id=com.bridgeplay.app&amp;referrer=utm_source%3Dweb%26utm_campaign%3Dweb_guia_aternos">
+      <div><div class="t1">Android</div><div class="t2">Free on Google Play</div></div>
+    </a>
+  </div>
+  <p class="note">Link not opening? Search "BridgePlay Bedrock" in your store.</p>
+
+  <h2 class="label" style="margin-top:32px">Troubleshooting</h2>
+  <details><summary>The LAN world doesn't show up</summary><div><ul>
+    <li>Make sure your phone and console are on the same Wi-Fi (not a guest network).</li>
+    <li>Turn your phone's Wi-Fi off and on, then reopen Minecraft on the console.</li>
+    <li>Look under Play → Worlds, not Servers or Friends.</li>
+  </ul></div></details>
+  <details><summary>It shows up but won't join</summary><div><ul>
+    <li>Aternos shuts the server down if nobody joins for a few minutes: start it again. BridgePlay tells you when it's offline.</li>
+    <li>Java with Geyser: check that you used the Bedrock (Geyser) port, not the Java one.</li>
+  </ul></div></details>
+  <details><summary>What about Minecraft 26.60 (October 27)?</summary><div>
+    <p>From that version, consoles only join servers that speak the new connection. Aternos Bedrock servers update on their own; if you run Java with Geyser, see <a href="servidores-26-60.html?lang=en">how to get your server ready for 26.60</a>.</p>
+  </div></details>
+  <details><summary>Are there other ways?</summary><div>
+    <p>Yes: changing your console's DNS, other phone apps, or a program on a PC. They all work; BridgePlay is the one that never makes you watch an ad to connect and doesn't touch your console's settings.</p>
+  </div></details>
+
+  <div class="card" style="margin-top:20px"><h2>Questions?</h2>
+    <p>Ask in the <a href="https://discord.gg/EFEthtAZ9J">BridgePlay Discord ↗</a>.</p></div>
+</div>
+
+</main>
+
+<footer class="foot"><div class="wrap">
+  <a href="./">← BridgePlay</a> ·
+  <a href="privacy.html"><span data-l="es">Política de privacidad</span><span data-l="en">Privacy Policy</span></a><br>
+  <span data-l="es">BridgePlay no es una app oficial de Minecraft y no está afiliada a Mojang, Microsoft, Xbox, PlayStation, Nintendo ni Aternos.</span>
+  <span data-l="en">BridgePlay is not an official Minecraft app and is not affiliated with Mojang, Microsoft, Xbox, PlayStation, Nintendo or Aternos.</span>
+</div></footer>
+
+<script>
+  // Etiqueta de campaña según de dónde viene la visita (?from=youtube → web_guia_aternos_youtube).
+  (function () {
+    var from = new URLSearchParams(location.search).get("from");
+    if (!from || !/^[a-z0-9_]{1,20}$/.test(from)) return;
+    var c = "web_guia_aternos_" + from;
+    ["es", "en"].forEach(function (l) {
+      document.getElementById("ios-" + l).href =
+        "https://apps.apple.com/app/apple-store/id6786974231?pt=129034241&ct=" + c + "&mt=8";
+      document.getElementById("android-" + l).href =
+        "https://play.google.com/store/apps/details?id=com.bridgeplay.app&referrer=utm_source%3D" +
+        from + "%26utm_campaign%3D" + c;
+    });
+  })();
+</script>
+</body>
+</html>
